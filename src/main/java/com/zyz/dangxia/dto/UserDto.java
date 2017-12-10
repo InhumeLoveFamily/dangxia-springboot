@@ -91,4 +91,19 @@ public class UserDto {
     public void setRegisterDate(String registerDate) {
         this.registerDate = registerDate;
     }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone=" + phone +
+                ", password='" + password + '\'' +
+                ", iconId=" + iconId +
+                ", credit=" + credit +
+                ", balance=" + balance +
+                ", integral=" + integral +
+                ", registerDate='" + registerDate + '\'' +
+                '}';
+    }
 }

@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(user, userDto);
         userDto.setRegisterDate(format.format(user.getRegisterDate()));
+        userDto.setPassword("");
         return userDto;
     }
 }
