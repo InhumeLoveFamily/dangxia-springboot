@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,6 +27,25 @@ public class UserServiceImpl implements UserService {
             }
         }
         return null;
+    }
+
+    @Override
+    public UserDto register(long phone, String password) {
+        //老用户，修改密码
+        User user  = userRepository.findByPhone(phone);
+        //新用户，初始化信息
+        if(user == null) {
+            user = new User();
+            user.setPhone(phone);
+            user.setRegisterDate(new Date());
+            user.setBalance(0);
+            user.setIconId(-1);
+            user.setCredit(1);
+            user.setIntegral(0);
+        }
+        user.setPassword(password);
+        user = userRepository.saveAndFlush(user);
+        return translate(user);
     }
 
     private UserDto translate(User user) {
