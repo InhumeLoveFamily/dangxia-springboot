@@ -30,6 +30,11 @@ public interface TaskService {
     List<TaskDto> getPublished(int userId);
 
     /**
+     * 获取附近
+     */
+    List<TaskDto> getNearbyQuick(double latitude,double longitude,double radius);
+
+    /**
      * 发布任务
      */
     int add(int publisher,int type,Date publishDate,Date endDate,
@@ -45,4 +50,12 @@ public interface TaskService {
      * 修改任务
      */
     int update(Task task);
+
+    /**
+     * 指定任务给某人执行
+     * @param taskId 任务编号
+     * @param userId 执行者编号
+     * @return
+     */
+    int appoint(int taskId, int userId);
 }

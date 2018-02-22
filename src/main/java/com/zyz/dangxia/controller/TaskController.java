@@ -19,6 +19,13 @@ public class TaskController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * 获取附近发布的任务
+     * @param latitude
+     * @param longitude
+     * @param radius
+     * @return
+     */
     @GetMapping("/{latitude}/{longitude}/{radius}/nearby")
     List<TaskDto> getNearby(@PathVariable("latitude") double latitude,
                             @PathVariable("longitude") double longitude,
@@ -26,6 +33,25 @@ public class TaskController {
         return taskService.getNearby(latitude,longitude,radius);
     }
 
+    /**
+     * 获取附近发布的快速任务
+     * @param latitude
+     * @param longitude
+     * @param radius
+     * @return
+     */
+    @GetMapping("/{latitude}/{longitude}/{radius}/nearbyQuick")
+    List<TaskDto> getNearbyQuick(@PathVariable("latitude") double latitude,
+                            @PathVariable("longitude") double longitude,
+                            @PathVariable("radius") double radius) {
+        return taskService.getNearbyQuick(latitude,longitude,radius);
+    }
+
+    /**
+     * 获取自己接下的任务
+     * @param userId
+     * @return
+     */
     @GetMapping("/{userId}/accepted")
     List<TaskDto> getAccpted(@PathVariable("userId") int userId) {
         return taskService.getAccepted(userId);
@@ -37,11 +63,11 @@ public class TaskController {
     }
 
     @PostMapping("/{userId}")
-    int add(@PathVariable("userId") int publisher, int type, Date publishDate, Date endDate,
+    int add(@PathVariable("userId") int publisher, int type, long publishDate, long endDate,
             String content, int requireVerify, String location, double latitude,
             double longitude, double price){
         logger.info(""+publisher+","+publishDate);
-        return taskService.add(publisher,type, publishDate, endDate,
+        return taskService.add(publisher,type, new Date(publishDate), new Date(endDate),
                  content, requireVerify, location, latitude,
          longitude, price);
     }
@@ -50,5 +76,15 @@ public class TaskController {
     int delete(@PathVariable("taskId") int taskId) {
         logger.info("delete: "+taskId);
         return taskService.delete(taskId);
+    }
+
+    /**
+     * 指定某人接受任务（需审核的任务通过审核之后，授予给某人执行）
+     */
+    @PostMapping("/{taskId}/{userId}")
+    int appoint(@PathVariable("taskId") int taskId,
+                @PathVariable("userId") int userId) {
+        logger.info("任务"+taskId+"授予给了用户:"+userId);
+        return taskService.appoint(taskId,userId);
     }
 }

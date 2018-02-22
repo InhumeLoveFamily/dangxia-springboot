@@ -2,7 +2,9 @@ package com.zyz.dangxia.service.impl;
 
 import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.entity.Task;
+import com.zyz.dangxia.entity.User;
 import com.zyz.dangxia.repository.TaskRepository;
+import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.TaskService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class TaskServiceImpl implements TaskService{
 
     @Autowired
     private TaskRepository taskRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<TaskDto> getAll() {
@@ -50,6 +55,19 @@ public class TaskServiceImpl implements TaskService{
     public List<TaskDto> getPublished(int userId) {
         return translate(taskRepository.findByPublisherIsOrderByPublishDateDesc(userId));
 
+    }
+
+    @Override
+    public List<TaskDto> getNearbyQuick(double latitude, double longitude, double radius) {
+        List<TaskDto> all = translate(taskRepository.findByExecutorIsAndTypeIsOrderByPublishDateDesc(-1,0));
+        List<TaskDto> result = new ArrayList<>();
+        for(TaskDto taskDto : all) {
+            //如果距离小于指定范围
+            if(km(taskDto.getLatitude(),taskDto.getLongitude(),latitude,longitude) < radius) {
+                result.add(taskDto);
+            }
+        }
+        return result;
     }
 
     @Override
@@ -96,11 +114,25 @@ public class TaskServiceImpl implements TaskService{
         return 0;
     }
 
+    @Override
+    public int appoint(int taskId, int userId) {
+        Task task = taskRepository.findOne(taskId);
+        User user = userRepository.findById(userId);
+        if(task == null || user == null) {
+            return -1;
+        }
+
+        task.setExecutor(userId);
+        taskRepository.saveAndFlush(task);
+        return 1;
+    }
+
     private TaskDto translate(Task task){
         TaskDto taskDto = new TaskDto();
         BeanUtils.copyProperties(task,taskDto);
         taskDto.setPublishDate(format.format(task.getPublishDate()));
         taskDto.setEndDate(format.format(task.getEndDate()));
+        taskDto.setPublisherName(userRepository.findById(task.getPublisher()).getName());
         return taskDto;
     }
 
