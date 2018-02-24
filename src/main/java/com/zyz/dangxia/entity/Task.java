@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "task")
 public class Task {
 
     @Id
@@ -14,8 +15,8 @@ public class Task {
     @Column(name = "publisher")
     private int publisher;
 
-    @Column(name = "executor")
-    private int executor;
+    @Column(name = "order_id")
+    private int orderId;
 
     @Column(name = "type")
     private int type;
@@ -60,13 +61,7 @@ public class Task {
         this.publisher = publisher;
     }
 
-    public int getExecutor() {
-        return executor;
-    }
 
-    public void setExecutor(int executor) {
-        this.executor = executor;
-    }
 
     public int getType() {
         return type;
@@ -140,12 +135,20 @@ public class Task {
         this.price = price;
     }
 
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
                 "id=" + id +
                 ", publisher=" + publisher +
-                ", executor=" + executor +
+                ", orderId=" + orderId +
                 ", type=" + type +
                 ", publishDate=" + publishDate +
                 ", endDate=" + endDate +

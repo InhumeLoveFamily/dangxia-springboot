@@ -35,7 +35,7 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByExecutorIsOrderByPublishDateDesc(-1));
+        List<TaskDto> all = translate(taskRepository.findByOrderIdIsOrderByPublishDateDesc(-1));
         List<TaskDto> result = new ArrayList<>();
         for(TaskDto taskDto : all) {
             //如果距离小于指定范围
@@ -48,7 +48,7 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getAccepted(int userId) {
-        return translate(taskRepository.findByExecutorIsOrderByPublishDateDesc(userId));
+        return translate(taskRepository.findByOrderIdIsOrderByPublishDateDesc(userId));
     }
 
     @Override
@@ -59,7 +59,7 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getNearbyQuick(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByExecutorIsAndTypeIsOrderByPublishDateDesc(-1,0));
+        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1,0));
         List<TaskDto> result = new ArrayList<>();
         for(TaskDto taskDto : all) {
             //如果距离小于指定范围
@@ -75,7 +75,7 @@ public class TaskServiceImpl implements TaskService{
         Task task = new Task();
         task.setContent(content);
         task.setEndDate(endDate);
-        task.setExecutor(-1);
+        task.setOrderId(-1);
         task.setLatitude(latitude);
         task.setLongitude(longitude);
         task.setLocation(location);
@@ -122,7 +122,7 @@ public class TaskServiceImpl implements TaskService{
             return -1;
         }
 
-        task.setExecutor(userId);
+//        task.setExecutor(userId);
         taskRepository.saveAndFlush(task);
         return 1;
     }

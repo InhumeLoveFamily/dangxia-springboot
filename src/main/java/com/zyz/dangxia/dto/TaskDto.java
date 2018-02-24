@@ -7,7 +7,7 @@ public class TaskDto {
 
     private String publisherName;
 
-    private int executor;
+    private int orderId;
 
     private int type;
 
@@ -41,14 +41,6 @@ public class TaskDto {
 
     public void setPublisher(int publisher) {
         this.publisher = publisher;
-    }
-
-    public int getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(int executor) {
-        this.executor = executor;
     }
 
     public int getType() {
@@ -131,13 +123,21 @@ public class TaskDto {
         this.publisherName = publisherName;
     }
 
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public String toString() {
         return "TaskDto{" +
                 "id=" + id +
                 ", publisher=" + publisher +
                 ", publisherName='" + publisherName + '\'' +
-                ", executor=" + executor +
+                ", orderId=" + orderId +
                 ", type=" + type +
                 ", publishDate='" + publishDate + '\'' +
                 ", endDate='" + endDate + '\'' +
