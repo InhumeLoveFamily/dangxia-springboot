@@ -1,6 +1,7 @@
 package com.zyz.dangxia.service;
 
 import com.zyz.dangxia.dto.ConversationDto;
+import com.zyz.dangxia.dto.MessageDto;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface ConversationService {
      * @param userId 查询者id
      * @return
      */
-    List<ConversationDto> getconversation(int userId);
+    List<ConversationDto> getConversation(int userId);
 
     /**
      * 发起对话
@@ -18,5 +19,12 @@ public interface ConversationService {
      * @param taskId 对话涉及的任务
      * @return
      */
-    int initiateconversation(int initiatorId,int taskId);
+    int initiateConversation(int initiatorId, int taskId);
+
+    /**
+     * 获取会话里的聊天记录
+     * @param conId
+     * @return
+     */
+    List<MessageDto> getMsgList(int conId);
 }

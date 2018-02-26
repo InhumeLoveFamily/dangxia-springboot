@@ -1,7 +1,9 @@
 package com.zyz.dangxia.service.impl;
 
 import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.entity.Conversation;
 import com.zyz.dangxia.entity.Message;
+import com.zyz.dangxia.repository.ConversationRepository;
 import com.zyz.dangxia.repository.MessageRepository;
 import com.zyz.dangxia.service.MessageService;
 import org.springframework.beans.BeanUtils;
@@ -17,6 +19,8 @@ public class MessageServiceImpl implements MessageService {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    @Autowired
+    ConversationRepository conversationRepository;
 
     @Autowired
     private MessageRepository messageRepository;
@@ -35,11 +39,6 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public int add(String content, int senderId, int receiverId, Date date) {
-        return 0;
-    }
-
-    @Override
     public int read(int msgId) {
         Message message = messageRepository.findOne(msgId);
         if(message == null) {
@@ -52,6 +51,23 @@ public class MessageServiceImpl implements MessageService {
             return 1;
         }
         return 0;
+    }
+
+    @Override
+    public int push(int conversationId, int sender, Date date, int type, String content,int status) {
+        Message message = new Message();
+        message.setConversationId(conversationId);
+        message.setStatus(status);
+        message.setContent(content);
+        message.setDate(date);
+        message.setSender(sender);
+        message.setType(type);
+        messageRepository.saveAndFlush(message);
+        Conversation conversation = conversationRepository.findById(conversationId);
+        conversation.setLastWords(content);
+        conversation.setLastDate(date);
+        conversationRepository.saveAndFlush(conversation);
+        return 1;
     }
 
     private MessageDto translate(Message message) {

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "order")
+@Table(name = "dx_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +15,13 @@ public class Order {
     private int executorId;
 
     @Column(name = "order_date")
-    private Date orderdate;
-
-    @Column(name = "finish_date")
-    private Date finishDate;
+    private Date orderDate;
 
     @Column(name = "status")
     private int status;
+
+    @Column(name = "finish_date")
+    private Date finishDate;
 
     public int getId() {
         return id;
@@ -39,12 +39,12 @@ public class Order {
         this.executorId = executorId;
     }
 
-    public Date getOrderdate() {
-        return orderdate;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setOrderdate(Date orderdate) {
-        this.orderdate = orderdate;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
     public Date getFinishDate() {
@@ -68,7 +68,7 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", executorId=" + executorId +
-                ", orderdate=" + orderdate +
+                ", orderDate=" + orderDate +
                 ", finishDate=" + finishDate +
                 ", status=" + status +
                 '}';

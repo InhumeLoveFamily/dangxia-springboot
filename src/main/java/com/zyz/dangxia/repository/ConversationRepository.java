@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ConversationRepository extends JpaRepository<Conversation,Integer>{
     List<Conversation> findByTaskIdInOrInitiatorIdIs(List<Integer> ids, int userId);
+    Conversation findById(int id);
+    Conversation findByTaskIdAndInitiatorId(int taskId,int userId);
 }

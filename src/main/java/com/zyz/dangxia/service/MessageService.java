@@ -8,6 +8,6 @@ import java.util.List;
 public interface MessageService {
     List<MessageDto> getMsgAboutMe(int userId);
     int delete(int msgId);
-    int add(String content, int senderId, int receiverId, Date date);
     int read(int msgId);
+    int push(int conversationId,int sender,Date date,int type,String content,int status);
 }
