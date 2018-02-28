@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface MessageRepository extends JpaRepository<Message,Integer>{
 //    List<Message> findBySenderIdIsOrReceiverIdIsOrderByDateAsc(int userId,int userId1);
+    List<Message> findByConversationIdOrderByDateAsc(int conId);
 }

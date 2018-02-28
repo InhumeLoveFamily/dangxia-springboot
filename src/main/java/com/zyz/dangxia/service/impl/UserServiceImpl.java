@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService {
         return translate(user);
     }
 
+    @Override
+    public UserDto getInfo(int userId) {
+        return translate(userRepository.findById(userId));
+    }
+
     private UserDto translate(User user) {
         if (user == null) {
             return null;

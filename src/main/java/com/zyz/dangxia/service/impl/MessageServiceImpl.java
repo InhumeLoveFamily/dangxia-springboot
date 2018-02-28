@@ -6,6 +6,8 @@ import com.zyz.dangxia.entity.Message;
 import com.zyz.dangxia.repository.ConversationRepository;
 import com.zyz.dangxia.repository.MessageRepository;
 import com.zyz.dangxia.service.MessageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,8 @@ import java.util.List;
 public class MessageServiceImpl implements MessageService {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
     @Autowired
     ConversationRepository conversationRepository;
@@ -63,6 +67,7 @@ public class MessageServiceImpl implements MessageService {
         message.setSender(sender);
         message.setType(type);
         messageRepository.saveAndFlush(message);
+        logger.info("已成功保存信息");
         Conversation conversation = conversationRepository.findById(conversationId);
         conversation.setLastWords(content);
         conversation.setLastDate(date);
@@ -70,7 +75,7 @@ public class MessageServiceImpl implements MessageService {
         return 1;
     }
 
-    private MessageDto translate(Message message) {
+    public MessageDto translate(Message message) {
         if (message == null) {
             return null;
         }
@@ -80,7 +85,7 @@ public class MessageServiceImpl implements MessageService {
         return messageDto;
     }
 
-    private List<MessageDto> translate(List<Message> messageList) {
+    public List<MessageDto> translate(List<Message> messageList) {
         List<MessageDto> messageDtos = new ArrayList<>();
         for (Message message : messageList) {
             messageDtos.add(translate(message));

@@ -41,9 +41,14 @@ public class ConversationController {
         return conversationService.initiateConversation(senderId,taskId);
     }
 
-    @GetMapping("/{conversationId}/list")
+    @GetMapping("/{conversationId}/msglist")
     public List<MessageDto> list(@PathVariable("conversationId") int conId) {
-        conversationService.getMsgList(conId);
-        return null;
+        return  conversationService.getMsgList(conId);
+
+    }
+
+    @GetMapping("/{conversationId}")
+    public ConversationDto get(@PathVariable("conversationId") int conversationId) {
+        return conversationService.get(conversationId);
     }
 }

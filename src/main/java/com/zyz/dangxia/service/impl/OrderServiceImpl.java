@@ -3,8 +3,10 @@ package com.zyz.dangxia.service.impl;
 import com.zyz.dangxia.dto.OrderDto;
 import com.zyz.dangxia.entity.Order;
 import com.zyz.dangxia.entity.Task;
+import com.zyz.dangxia.entity.User;
 import com.zyz.dangxia.repository.OrderRepository;
 import com.zyz.dangxia.repository.TaskRepository;
+import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     ConversationService conversationService;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     @Transactional
@@ -70,6 +75,30 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderDto> getAboutMe(int userId) {
         return null;
+    }
+
+    @Override
+    @Transactional
+    public int cancelAuthor(int userId, String password, int orderId) {
+        User user = userRepository.findById(userId);
+        if(user == null) {
+            return 0;
+        }
+        if(!user.getPassword().equals(password)) {
+            return -1;
+        }
+        Task task = taskRepository.findByOrderId(orderId);
+        if(task.getOrderId()==-1) {
+            return 1;
+        }
+        task.setOrderId(-1);
+        taskRepository.saveAndFlush(task);
+        Order order = orderRepository.findById(orderId);
+        if(order == null) {
+            throw new RuntimeException();
+        }
+        orderRepository.delete(orderId);
+        return 1;
     }
 
     @Override

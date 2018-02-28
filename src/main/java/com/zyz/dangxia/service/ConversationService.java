@@ -27,4 +27,6 @@ public interface ConversationService {
      * @return
      */
     List<MessageDto> getMsgList(int conId);
+
+    ConversationDto get(int id);
 }

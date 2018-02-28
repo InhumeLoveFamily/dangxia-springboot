@@ -24,5 +24,14 @@ public interface OrderService {
      */
     List<OrderDto> getAboutMe(int userId);
 
+    /**
+     * 取消任务的授权
+     * @param userId
+     * @param password
+     * @param orderId
+     * @return
+     */
+    int cancelAuthor(int userId,String password,int orderId);
+
     int finish(int order,Date finishDate);
 }

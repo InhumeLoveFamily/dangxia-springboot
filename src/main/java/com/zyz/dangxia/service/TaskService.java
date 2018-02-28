@@ -10,6 +10,9 @@ public interface TaskService {
     //获取数据库中所有的任务
     List<TaskDto> getAll();
 
+    //根据id获取单个任务
+    TaskDto get(int taskId);
+
     /**
      * 根据经纬度 查询附近的任务
      * @param latitude 纬度
