@@ -9,14 +9,21 @@ import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.OrderService;
+import com.zyz.dangxia.service.TaskService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
 @Service
 public class OrderServiceImpl implements OrderService {
+
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 
     @Autowired
     OrderRepository orderRepository;
@@ -30,9 +37,12 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    TaskService taskService;
+
     @Override
     @Transactional
-    //创建订单->在task表中保存订单号->新建对话->发送信息，并更新对话中的lastwords
+    //创建订单->在task表中保存订单号->新建对话->发送信息，并更新对'''话中的lastwords
     public int add(int taskId, int executorId, int status) {
         Order order = new Order();
         order.setExecutorId(executorId);
@@ -53,7 +63,7 @@ public class OrderServiceImpl implements OrderService {
         task.setOrderId(order.getId());
         taskRepository.saveAndFlush(task);
         //发起对话
-        return conversationService.initiateConversation(executorId,taskId);
+        return conversationService.initiateConversation(executorId, taskId);
 
     }
 
@@ -64,12 +74,26 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDto get(int orderId) {
-        return null;
+        return translate(orderRepository.findById(orderId));
+    }
+
+    private OrderDto translate(Order order) {
+        if (order == null) {
+            return null;
+        }
+        OrderDto orderDto = new OrderDto();
+        BeanUtils.copyProperties(order, orderDto);
+        orderDto.setFinishDate(format.format(order.getFinishDate()));
+        orderDto.setOrderDate(format.format(order.getOrderDate()));
+        orderDto.setTaskDto(taskService.getByOrder(order.getId()));
+        orderDto.setExecutorName(userRepository.findById(order.getExecutorId()).getName());
+        return orderDto;
     }
 
     @Override
     public OrderDto getByTaskId(int taskId) {
-        return null;
+        return translate(orderRepository.findById(taskRepository.findById(taskId).getOrderId()));
+
     }
 
     @Override
@@ -79,22 +103,20 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public int cancelAuthor(int userId, String password, int orderId) {
+    public int cancelAuthor(int userId, int orderId) {
         User user = userRepository.findById(userId);
-        if(user == null) {
+        if (user == null) {
             return 0;
         }
-        if(!user.getPassword().equals(password)) {
-            return -1;
-        }
+
         Task task = taskRepository.findByOrderId(orderId);
-        if(task.getOrderId()==-1) {
+        if (task.getOrderId() == -1) {
             return 1;
         }
         task.setOrderId(-1);
         taskRepository.saveAndFlush(task);
         Order order = orderRepository.findById(orderId);
-        if(order == null) {
+        if (order == null) {
             throw new RuntimeException();
         }
         orderRepository.delete(orderId);
@@ -102,7 +124,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int finish(int order, Date finishDate) {
-        return 0;
+    public int finish(int orderId, Date finishDate) {
+        Order order = orderRepository.findById(orderId);
+        if (orderId == -1 || order == null) {
+            throw new RuntimeException();
+        }
+        order.setStatus(1);
+        order.setFinishDate(finishDate);
+        orderRepository.saveAndFlush(order);
+        return 1;
     }
 }

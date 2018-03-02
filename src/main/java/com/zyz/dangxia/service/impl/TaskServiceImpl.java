@@ -39,6 +39,11 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
+    public TaskDto getByOrder(int orderId) {
+        return translate(taskRepository.findByOrderId(orderId));
+    }
+
+    @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
         List<TaskDto> all = translate(taskRepository.findByOrderIdIsOrderByPublishDateDesc(-1));
         List<TaskDto> result = new ArrayList<>();

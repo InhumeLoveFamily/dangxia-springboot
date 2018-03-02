@@ -30,8 +30,8 @@ public class UserController {
         return userService.register(phone,password);
     }
 
-    @GetMapping("")
-    public UserDto getInfo(@RequestParam("userId") int userId) {
+    @GetMapping("/{userId}")
+    public UserDto getInfo(@PathVariable("userId") int userId) {
         return userService.getInfo(userId);
     }
 

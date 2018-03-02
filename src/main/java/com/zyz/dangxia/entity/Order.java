@@ -18,7 +18,7 @@ public class Order {
     private Date orderDate;
 
     @Column(name = "status")
-    private int status;
+    private int status;//0->订单执行中、-1->订单删除、1->订单已结账、2->订单完成评价
 
     @Column(name = "finish_date")
     private Date finishDate;

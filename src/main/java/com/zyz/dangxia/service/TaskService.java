@@ -13,6 +13,8 @@ public interface TaskService {
     //根据id获取单个任务
     TaskDto get(int taskId);
 
+    TaskDto getByOrder(int orderId);
+
     /**
      * 根据经纬度 查询附近的任务
      * @param latitude 纬度
