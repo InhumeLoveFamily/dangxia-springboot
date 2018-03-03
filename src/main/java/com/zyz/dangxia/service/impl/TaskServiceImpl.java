@@ -45,8 +45,9 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByOrderIdIsOrderByPublishDateDesc(-1));
+        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1,1));
         List<TaskDto> result = new ArrayList<>();
+
         for(TaskDto taskDto : all) {
             //如果距离小于指定范围
             if(km(taskDto.getLatitude(),taskDto.getLongitude(),latitude,longitude) < radius) {
