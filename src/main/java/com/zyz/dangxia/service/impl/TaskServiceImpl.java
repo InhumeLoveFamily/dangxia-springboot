@@ -1,7 +1,10 @@
 package com.zyz.dangxia.service.impl;
 
+import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.entity.Task;
+import com.zyz.dangxia.entity.TaskClass;
 import com.zyz.dangxia.entity.User;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
@@ -136,6 +139,27 @@ public class TaskServiceImpl implements TaskService{
 //        task.setExecutor(userId);
         taskRepository.saveAndFlush(task);
         return 1;
+    }
+
+    @Autowired
+    TaskClassList taskClassList;
+    @Override
+    public List<TaskClassDto> getClasses() {
+        return translate1(taskClassList.getList());
+    }
+
+    private TaskClassDto translate(TaskClass taskClass) {
+        TaskClassDto dto = new TaskClassDto();
+        BeanUtils.copyProperties(taskClass,dto);
+        return dto;
+    }
+
+    private List<TaskClassDto> translate1(List<TaskClass> list){
+        List<TaskClassDto> result = new ArrayList<>();
+        for(TaskClass taskClass : list) {
+            result.add(translate(taskClass));
+        }
+        return result;
     }
 
     private TaskDto translate(Task task){

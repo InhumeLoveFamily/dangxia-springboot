@@ -45,6 +45,9 @@ public class Task {
     @Column(name = "price")
     private double price;
 
+    @Column(name = "class_id")
+    private int classId;
+
     public int getId() {
         return id;
     }
@@ -141,6 +144,14 @@ public class Task {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public int getClassId() {
+        return classId;
+    }
+
+    public void setClassId(int classId) {
+        this.classId = classId;
     }
 
     @Override

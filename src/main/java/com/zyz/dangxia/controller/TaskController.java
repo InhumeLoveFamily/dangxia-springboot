@@ -1,5 +1,7 @@
 package com.zyz.dangxia.controller;
 
+import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.service.TaskService;
 import org.slf4j.Logger;
@@ -17,6 +19,9 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
+    @Autowired
+    TaskClassList taskClassList;
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -30,6 +35,8 @@ public class TaskController {
     List<TaskDto> getNearby(@PathVariable("latitude") double latitude,
                             @PathVariable("longitude") double longitude,
                             @PathVariable("radius") double radius) {
+//        if(latitude>10)
+//            throw new RuntimeException("测试错误");
         return taskService.getNearby(latitude,longitude,radius);
     }
 
@@ -87,4 +94,10 @@ public class TaskController {
         logger.info("任务"+taskId+"授予给了用户:"+userId);
         return taskService.appoint(taskId,userId);
     }
+
+    @GetMapping("/classes")//查询需求有哪几种类别
+    List<TaskClassDto> getClasses() {
+        return taskService.getClasses();
+    }
+
 }

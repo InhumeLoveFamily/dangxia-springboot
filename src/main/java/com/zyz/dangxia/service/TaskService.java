@@ -1,5 +1,6 @@
 package com.zyz.dangxia.service;
 
+import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.entity.Task;
 
@@ -63,4 +64,6 @@ public interface TaskService {
      * @return
      */
     int appoint(int taskId, int userId);
+
+    List<TaskClassDto> getClasses();
 }
