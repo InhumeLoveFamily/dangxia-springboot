@@ -1,6 +1,7 @@
 package com.zyz.dangxia.controller;
 
 import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.dto.PriceSection;
 import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.service.TaskService;
@@ -98,6 +99,15 @@ public class TaskController {
     @GetMapping("/classes")//查询需求有哪几种类别
     List<TaskClassDto> getClasses() {
         return taskService.getClasses();
+    }
+
+    @PostMapping("/evaluation")
+//查询估价
+    PriceSection getEvaluation(@RequestParam("date") long dateTime,
+                               @RequestParam("classId") int classId,
+                               @RequestParam("content") String content
+    ) {
+        return taskService.getPriceSection(classId, content, new Date(dateTime));
     }
 
 }

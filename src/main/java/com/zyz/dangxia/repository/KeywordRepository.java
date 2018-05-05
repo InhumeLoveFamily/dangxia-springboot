@@ -11,4 +11,6 @@ import java.util.List;
 public interface KeywordRepository extends JpaRepository<Keyword,Integer> {
     @Query("from Keyword where id <> '-1'")
     List<Keyword> findUserful();
+
+    List<Keyword> findByClassId(int classId);
 }

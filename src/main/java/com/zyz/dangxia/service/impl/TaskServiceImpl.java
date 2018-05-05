@@ -1,28 +1,34 @@
 package com.zyz.dangxia.service.impl;
 
+import com.zyz.dangxia.bigdata.HandleKeywordUtil;
+import com.zyz.dangxia.bigdata.HandledDataList;
+import com.zyz.dangxia.bigdata.PriceSectionUtil;
 import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.dto.PriceSection;
 import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
+import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Task;
 import com.zyz.dangxia.entity.TaskClass;
 import com.zyz.dangxia.entity.User;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.TaskService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static com.zyz.dangxia.base.DistanceUtil.km;
 
 @Service
 public class TaskServiceImpl implements TaskService{
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
@@ -146,6 +152,50 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public List<TaskClassDto> getClasses() {
         return translate1(taskClassList.getList());
+    }
+
+    @Autowired
+    private HandleKeywordUtil handleKeywordUtil;
+
+    @Autowired
+    HandledDataList handledDataList;
+
+    @Override
+    public PriceSection getPriceSection(int classId, String taskContent, Date date) {
+        HandledData handledData = handleKeywordUtil.getHandledData(classId, taskContent, date, 0);
+        logger.info("被处理后的请求为：{}", handledData.toString());
+        //进行KNN算法
+        //获取样本数据
+        double[][] sample = handledDataList.getDataWithDistanceList(classId);
+        //计算距离
+        for (int i = 0; i < sample.length; i++) {
+            sample[i][6] = Math.sqrt(
+                    Math.pow((handledData.getC0() - sample[i][0]), 2) +
+                            Math.pow((handledData.getC1() - sample[i][1]), 2) +
+                            Math.pow((handledData.getC2() - sample[i][2]), 2) +
+                            Math.pow((handledData.getC3() - sample[i][3]), 2) +
+                            Math.pow((1 / 3) * ((handledData.getT() - sample[i][4])), 2)
+            );
+            logger.info("计算出的距离为{}", sample[i][6]);
+        }
+        //按照距离进行排序
+        Arrays.sort(sample, (o1, o2) -> (int) (o1[6] - o2[6]));
+        //取出前K=6个,统计各价格类别出现次数
+        int[] counts = new int[8];
+        for (int i = 0; i < 6 && i < sample.length; i++) {
+            logger.info("第{}个数据是属于{}类别的", i + 1, sample[i][5]);
+            counts[(int) sample[i][5]]++;
+        }
+        //找到出现次数最多的类别
+        int p = 0;
+        int max = 0;
+        for (int i = 1; i < 8; i++) {
+            if (counts[i] > max) {
+                max = counts[i];
+                p = i;
+            }
+        }
+        return PriceSectionUtil.getSection(p);
     }
 
     private TaskClassDto translate(TaskClass taskClass) {
