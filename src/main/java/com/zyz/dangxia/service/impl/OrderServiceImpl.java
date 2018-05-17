@@ -1,9 +1,12 @@
 package com.zyz.dangxia.service.impl;
 
+import com.zyz.dangxia.bigdata.HandleKeywordUtil;
 import com.zyz.dangxia.dto.OrderDto;
+import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Order;
 import com.zyz.dangxia.entity.Task;
 import com.zyz.dangxia.entity.User;
+import com.zyz.dangxia.repository.HandledDataRepository;
 import com.zyz.dangxia.repository.OrderRepository;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
@@ -39,6 +42,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     TaskService taskService;
+
+    @Autowired
+    HandledDataRepository handledDataRepository;
+
+    @Autowired
+    HandleKeywordUtil handleKeywordUtil;
 
     @Override
     @Transactional
@@ -124,6 +133,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional
     public int finish(int orderId, Date finishDate) {
         Order order = orderRepository.findById(orderId);
         if (orderId == -1 || order == null) {
@@ -132,6 +142,11 @@ public class OrderServiceImpl implements OrderService {
         order.setStatus(1);
         order.setFinishDate(finishDate);
         orderRepository.saveAndFlush(order);
+        Task task = taskRepository.findByOrderId(orderId);
+        //在样本数据库中写入数据
+        HandledData data = handleKeywordUtil.getHandledData(task.getClassId(),
+                task.getContent(), task.getPublishDate(), (int) task.getPrice());
+        handledDataRepository.saveAndFlush(data);
         return 1;
     }
 }

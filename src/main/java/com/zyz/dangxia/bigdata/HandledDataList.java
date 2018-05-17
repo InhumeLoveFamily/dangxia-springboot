@@ -13,8 +13,12 @@ import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * 对样本数据定期存入内存并处理，分离
+ */
 @Component
 public class HandledDataList {
+    private static final int COUNT_OF_CLASSES = 12;//一共有12个大类（不包括-1）
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
     //读写锁 适用于对数据结构读取的次数远远大于写的次数，不同线程读与读之间不会互斥，
@@ -56,8 +60,8 @@ public class HandledDataList {
         try {
             //逐个查出各大类的数据，进行赋值
             allDatas = handledDataRepository.findAll();
-            datas = new HandledDatasForOneClass[13];
-            for (int j = 0; j < 13; j++) {
+            datas = new HandledDatasForOneClass[COUNT_OF_CLASSES];
+            for (int j = 0; j < COUNT_OF_CLASSES; j++) {
                 List<HandledData> temp = handledDataRepository.findByClassId(j + 1);
                 datas[j] = new HandledDatasForOneClass(temp.size());
                 for (int i = 0; i < temp.size(); i++) {
@@ -74,6 +78,7 @@ public class HandledDataList {
             }
             System.gc();
         } finally {
+
             wLock.unlock();
         }
     }
