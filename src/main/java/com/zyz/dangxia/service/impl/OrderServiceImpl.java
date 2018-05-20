@@ -1,6 +1,6 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.bigdata.HandleKeywordUtil;
+import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
 import com.zyz.dangxia.dto.OrderDto;
 import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Order;
@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
     HandledDataRepository handledDataRepository;
 
     @Autowired
-    HandleKeywordUtil handleKeywordUtil;
+    Raw2HandledDataUtil raw2HandledDataUtil;
 
     @Override
     @Transactional
@@ -144,7 +144,7 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.saveAndFlush(order);
         Task task = taskRepository.findByOrderId(orderId);
         //在样本数据库中写入数据
-        HandledData data = handleKeywordUtil.getHandledData(task.getClassId(),
+        HandledData data = raw2HandledDataUtil.getHandledData(task.getClassId(),
                 task.getContent(), task.getPublishDate(), (int) task.getPrice());
         handledDataRepository.saveAndFlush(data);
         return 1;

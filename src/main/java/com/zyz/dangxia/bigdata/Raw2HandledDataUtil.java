@@ -16,7 +16,7 @@ import java.util.List;
  * 将原始数据转换为特征向量的工具类
  */
 @Component
-public class HandleKeywordUtil {
+public class Raw2HandledDataUtil {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private KeywordRepository keywordRepository;

@@ -12,3 +12,7 @@ spring:
     #验证手写的entity是否与实际的表一致，如果不一致则报错
       ddl-auto: validate
     show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+    database: 0

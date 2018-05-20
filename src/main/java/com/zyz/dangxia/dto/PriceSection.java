@@ -26,6 +26,9 @@ public class PriceSection {
         this.min = min;
     }
 
+    public PriceSection() {
+    }
+
     @Override
     public String toString() {
         return "PriceSection{" +

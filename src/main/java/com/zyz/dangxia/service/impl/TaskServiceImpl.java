@@ -1,6 +1,6 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.bigdata.HandleKeywordUtil;
+import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
 import com.zyz.dangxia.bigdata.HandledDataList;
 import com.zyz.dangxia.bigdata.PriceSectionUtil;
 import com.zyz.dangxia.bigdata.TaskClassList;
@@ -11,6 +11,7 @@ import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Task;
 import com.zyz.dangxia.entity.TaskClass;
 import com.zyz.dangxia.entity.User;
+import com.zyz.dangxia.repository.EvaluationCacheRepository;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.TaskService;
@@ -155,14 +156,24 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Autowired
-    private HandleKeywordUtil handleKeywordUtil;
+    private Raw2HandledDataUtil raw2HandledDataUtil;
 
     @Autowired
     HandledDataList handledDataList;
 
+    @Autowired
+    EvaluationCacheRepository evaluationCacheRepository;
+
     @Override
     public PriceSection getPriceSection(int classId, String taskContent, Date date) {
-        HandledData handledData = handleKeywordUtil.getHandledData(classId, taskContent, date, 0);
+        HandledData handledData = raw2HandledDataUtil.getHandledData(classId, taskContent, date, 0);
+        PriceSection section = evaluationCacheRepository
+                .getPriceSection(handledData.getKey());
+        if (section != null) {
+            logger.info("从redis缓存中拿到了结果。");
+            return section;
+        }
+
         logger.info("被处理后的请求为：{}", handledData.toString());
         //进行KNN算法
         //获取样本数据
@@ -195,7 +206,9 @@ public class TaskServiceImpl implements TaskService{
                 p = i;
             }
         }
-        return PriceSectionUtil.getSection(p);
+        section = PriceSectionUtil.getSection(p);
+        evaluationCacheRepository.putPriceSection(handledData.getKey(), section);
+        return section;
     }
 
     private TaskClassDto translate(TaskClass taskClass) {

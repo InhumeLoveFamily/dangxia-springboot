@@ -31,6 +31,10 @@ public class HandledData {
     @Column(name = "class_id")
     private int classId;
 
+    public String getKey() {
+        return "" + c0 + c1 + c2 + c2 + t;
+    }
+
     public HandledData() {
     }
 
