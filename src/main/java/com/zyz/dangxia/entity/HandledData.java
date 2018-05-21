@@ -32,7 +32,7 @@ public class HandledData {
     private int classId;
 
     public String getKey() {
-        return "" + c0 + c1 + c2 + c2 + t;
+        return "" + c0 + c1 + c2 + c3 + t;
     }
 
     public HandledData() {

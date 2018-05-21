@@ -16,9 +16,14 @@ import static org.junit.Assert.*;
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TaskControllerTest {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     TaskController taskController;
+
+    @Test
+    public void getTime() {
+        logger.info("" + new Date().getTime());
+    }
 
     @Test
     public void getEvaluation() {

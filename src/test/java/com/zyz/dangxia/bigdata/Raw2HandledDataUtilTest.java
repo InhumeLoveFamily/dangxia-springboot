@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-public class HandleKeywordUtilTest {
+public class Raw2HandledDataUtilTest {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Test

@@ -207,6 +207,7 @@ public class TaskServiceImpl implements TaskService{
             }
         }
         section = PriceSectionUtil.getSection(p);
+        logger.info("存入redis");
         evaluationCacheRepository.putPriceSection(handledData.getKey(), section);
         return section;
     }

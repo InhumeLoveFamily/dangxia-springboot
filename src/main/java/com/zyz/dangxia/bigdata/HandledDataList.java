@@ -1,6 +1,7 @@
 package com.zyz.dangxia.bigdata;
 
 import com.zyz.dangxia.entity.HandledData;
+import com.zyz.dangxia.repository.EvaluationCacheRepository;
 import com.zyz.dangxia.repository.HandledDataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,9 @@ public class HandledDataList {
     private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
     @Autowired
     private HandledDataRepository handledDataRepository;
+
+    @Autowired
+    private EvaluationCacheRepository evaluationCacheRepository;
 
     private List<HandledData> allDatas;
 
@@ -76,6 +80,7 @@ public class HandledDataList {
                 }
                 logger.info("{}分类的蝇量数据装填完毕，一共有{}条数据", j + 1, datas[j].dataWithDistance.length);
             }
+//            evaluationCacheRepository.flashDB();
             System.gc();
         } finally {
 
