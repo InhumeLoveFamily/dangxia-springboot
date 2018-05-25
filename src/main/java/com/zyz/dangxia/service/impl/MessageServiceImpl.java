@@ -3,8 +3,10 @@ package com.zyz.dangxia.service.impl;
 import com.zyz.dangxia.dto.MessageDto;
 import com.zyz.dangxia.entity.Conversation;
 import com.zyz.dangxia.entity.Message;
+import com.zyz.dangxia.mqtt.MqttManager;
 import com.zyz.dangxia.repository.ConversationRepository;
 import com.zyz.dangxia.repository.MessageRepository;
+import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +30,9 @@ public class MessageServiceImpl implements MessageService {
 
     @Autowired
     private MessageRepository messageRepository;
+
+    @Autowired
+    private TaskRepository taskRepository;
 
     @Override
     public List<MessageDto> getMsgAboutMe(int userId) {
@@ -68,10 +73,17 @@ public class MessageServiceImpl implements MessageService {
         message.setType(type);
         messageRepository.saveAndFlush(message);
         logger.info("已成功保存信息");
+
         Conversation conversation = conversationRepository.findById(conversationId);
         conversation.setLastWords(content);
         conversation.setLastDate(date);
         conversationRepository.saveAndFlush(conversation);
+
+        //找到消息的接收者，要么是会话发起者(conversation.initiatorId)，要么是任务发布者task.publisherId
+        int receiverId = conversation.getInitiatorId() == sender ?
+                taskRepository.findTaskPublisherById(conversation.getTaskId()) : conversation.getInitiatorId();
+        logger.info("接收者id={}", receiverId);
+        MqttManager.getInstance().publishMsg(translate(message), receiverId);
         return 1;
     }
 

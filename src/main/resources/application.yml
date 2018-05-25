@@ -1,4 +1,4 @@
-server:
+﻿server:
   port: 8081
 spring:
   datasource:
@@ -18,4 +18,3 @@ spring:
     port: 6379
     database: 0
 #    host: 140.143.225.154
-
