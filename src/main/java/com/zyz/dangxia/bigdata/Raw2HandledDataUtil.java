@@ -43,6 +43,7 @@ public class Raw2HandledDataUtil {
             String[] words = keywordList.get(i).getContent().split("[、，]");
             for (String word : words) {
                 if (content.contains(word)) {
+                    logger.info("匹配到关键词{}", word);
                     counts[i]++;
                 }
             }

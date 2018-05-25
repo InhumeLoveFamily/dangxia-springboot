@@ -53,7 +53,8 @@ public class ConversationServiceImpl implements ConversationService {
         //找出自己发布的任务相关的会话+自己主动发起的会话
         List<Integer> myTasks = taskRepository.findTaskIds(userId);
 //        logger.info();
-        List<Conversation> conversations = conversationRepository.findByTaskIdInOrInitiatorIdIs(myTasks, userId);
+        List<Conversation> conversations = conversationRepository
+                .findByTaskIdInOrInitiatorIdIsOrderByLastDateDesc(myTasks, userId);
         return translate1(conversations);
     }
 

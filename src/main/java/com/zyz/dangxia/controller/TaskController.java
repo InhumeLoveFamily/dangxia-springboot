@@ -73,11 +73,11 @@ public class TaskController {
     @PostMapping("/{userId}")
     int add(@PathVariable("userId") int publisher, int type, long publishDate, long endDate,
             String content, int requireVerify, String location, double latitude,
-            double longitude, double price){
+            double longitude, double price, int classId) {
         logger.info(""+publisher+","+publishDate);
         return taskService.add(publisher,type, new Date(publishDate), new Date(endDate),
                  content, requireVerify, location, latitude,
-         longitude, price);
+                longitude, price, classId);
     }
 
     @DeleteMapping("/{taskId}")

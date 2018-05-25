@@ -44,9 +44,9 @@ public interface TaskService {
     /**
      * 发布任务
      */
-    int add(int publisher,int type,Date publishDate,Date endDate,
-            String content,int requireVerify,String location,double latitude,
-            double longitude,double price);
+    int add(int publisher, int type, Date publishDate, Date endDate,
+            String content, int requireVerify, String location, double latitude,
+            double longitude, double price, int classId);
 
     /**
      * 删除任务

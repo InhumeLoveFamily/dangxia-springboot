@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ConversationRepository extends JpaRepository<Conversation,Integer>{
-    List<Conversation> findByTaskIdInOrInitiatorIdIs(List<Integer> ids, int userId);
+    List<Conversation> findByTaskIdInOrInitiatorIdIsOrderByLastDateDesc(List<Integer> ids, int userId);
     Conversation findById(int id);
     Conversation findByTaskIdAndInitiatorId(int taskId,int userId);
 }

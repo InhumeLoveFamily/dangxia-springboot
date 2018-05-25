@@ -92,7 +92,8 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public int add(int publisher, int type, Date publishDate, Date endDate, String content, int requireVerify, String location, double latitude, double longitude, double price) {
+    public int add(int publisher, int type, Date publishDate, Date endDate, String content, int requireVerify,
+                   String location, double latitude, double longitude, double price, int classId) {
         Task task = new Task();
         task.setContent(content);
         task.setEndDate(endDate);
@@ -104,6 +105,7 @@ public class TaskServiceImpl implements TaskService{
         task.setPublishDate(publishDate);
         task.setPublisher(publisher);
         task.setType(type);
+        task.setClassId(classId);
         task.setRequireVerify(requireVerify);
         task = taskRepository.saveAndFlush(task);
         if(task == null) {

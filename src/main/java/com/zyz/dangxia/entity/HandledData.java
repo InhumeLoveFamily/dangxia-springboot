@@ -111,4 +111,18 @@ public class HandledData {
     public void setClassId(int classId) {
         this.classId = classId;
     }
+
+    @Override
+    public String toString() {
+        return "HandledData{" +
+                "id=" + id +
+                ", c0=" + c0 +
+                ", c1=" + c1 +
+                ", c2=" + c2 +
+                ", c3=" + c3 +
+                ", t=" + t +
+                ", p=" + p +
+                ", classId=" + classId +
+                '}';
+    }
 }

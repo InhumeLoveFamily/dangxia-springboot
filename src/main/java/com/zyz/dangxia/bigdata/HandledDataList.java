@@ -47,7 +47,7 @@ public class HandledDataList {
             double[][] copy = new double[source.length][7];
 
             for (int i = 0; i < source.length; i++) {
-                System.arraycopy(source[i], 0, copy[i], 0, source.length);
+                System.arraycopy(source[i], 0, copy[i], 0, 7);
             }
             return copy;
 
@@ -67,15 +67,17 @@ public class HandledDataList {
             datas = new HandledDatasForOneClass[COUNT_OF_CLASSES];
             for (int j = 0; j < COUNT_OF_CLASSES; j++) {
                 List<HandledData> temp = handledDataRepository.findByClassId(j + 1);
+                logger.info(temp.toString());
                 datas[j] = new HandledDatasForOneClass(temp.size());
+
                 for (int i = 0; i < temp.size(); i++) {
-                    HandledData data = allDatas.get(i);
-                    datas[j].dataWithDistance[i][0] = data.getC0();
-                    datas[j].dataWithDistance[i][1] = data.getC1();
-                    datas[j].dataWithDistance[i][2] = data.getC2();
-                    datas[j].dataWithDistance[i][3] = data.getC3();
-                    datas[j].dataWithDistance[i][4] = data.getT();
-                    datas[j].dataWithDistance[i][5] = data.getP();
+//                    HandledData data = allDatas.get(i);
+                    datas[j].dataWithDistance[i][0] = temp.get(i).getC0();
+                    datas[j].dataWithDistance[i][1] = temp.get(i).getC1();
+                    datas[j].dataWithDistance[i][2] = temp.get(i).getC2();
+                    datas[j].dataWithDistance[i][3] = temp.get(i).getC3();
+                    datas[j].dataWithDistance[i][4] = temp.get(i).getT();
+                    datas[j].dataWithDistance[i][5] = temp.get(i).getP();
                     datas[j].dataWithDistance[i][6] = 0;//最后一个变量是距离
                 }
                 logger.info("{}分类的蝇量数据装填完毕，一共有{}条数据", j + 1, datas[j].dataWithDistance.length);
