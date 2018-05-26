@@ -27,7 +27,7 @@ import java.util.*;
 import static com.zyz.dangxia.base.DistanceUtil.km;
 
 @Service
-public class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -55,12 +55,12 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1,1));
+        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1, 1));
         List<TaskDto> result = new ArrayList<>();
 
-        for(TaskDto taskDto : all) {
+        for (TaskDto taskDto : all) {
             //如果距离小于指定范围
-            if(km(taskDto.getLatitude(),taskDto.getLongitude(),latitude,longitude) < radius) {
+            if (km(taskDto.getLatitude(), taskDto.getLongitude(), latitude, longitude) < radius) {
                 result.add(taskDto);
             }
         }
@@ -80,11 +80,11 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public List<TaskDto> getNearbyQuick(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1,0));
+        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1, 0));
         List<TaskDto> result = new ArrayList<>();
-        for(TaskDto taskDto : all) {
+        for (TaskDto taskDto : all) {
             //如果距离小于指定范围
-            if(km(taskDto.getLatitude(),taskDto.getLongitude(),latitude,longitude) < radius) {
+            if (km(taskDto.getLatitude(), taskDto.getLongitude(), latitude, longitude) < radius) {
                 result.add(taskDto);
             }
         }
@@ -108,10 +108,10 @@ public class TaskServiceImpl implements TaskService{
         task.setClassId(classId);
         task.setRequireVerify(requireVerify);
         task = taskRepository.saveAndFlush(task);
-        if(task == null) {
+        if (task == null) {
             return -1;
         }
-        if(task.getPublisher() == publisher) {
+        if (task.getPublisher() == publisher) {
             return 1;
         } else {
             return -1;
@@ -121,7 +121,7 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public int delete(int taskId) {
         Task task = taskRepository.findOne(taskId);
-        if(task == null) {
+        if (task == null) {
             return -1;
         }
         try {
@@ -141,17 +141,27 @@ public class TaskServiceImpl implements TaskService{
     public int appoint(int taskId, int userId) {
         Task task = taskRepository.findById(taskId);
         User user = userRepository.findById(userId);
-        if(task == null || user == null) {
+        if (task == null || user == null) {
             return -1;
         }
 
-//        task.setExecutor(userId);
+//        task.set(userId);
+        taskRepository.saveAndFlush(task);
+        return 1;
+    }
+
+    @Override
+    public int changePrice(double newPrice, int taskId) {
+        if (newPrice < 0) return -1;
+        Task task = taskRepository.findById(taskId);
+        task.setPrice(newPrice);
         taskRepository.saveAndFlush(task);
         return 1;
     }
 
     @Autowired
     TaskClassList taskClassList;
+
     @Override
     public List<TaskClassDto> getClasses() {
         return translate1(taskClassList.getList());
@@ -216,21 +226,21 @@ public class TaskServiceImpl implements TaskService{
 
     private TaskClassDto translate(TaskClass taskClass) {
         TaskClassDto dto = new TaskClassDto();
-        BeanUtils.copyProperties(taskClass,dto);
+        BeanUtils.copyProperties(taskClass, dto);
         return dto;
     }
 
-    private List<TaskClassDto> translate1(List<TaskClass> list){
+    private List<TaskClassDto> translate1(List<TaskClass> list) {
         List<TaskClassDto> result = new ArrayList<>();
-        for(TaskClass taskClass : list) {
+        for (TaskClass taskClass : list) {
             result.add(translate(taskClass));
         }
         return result;
     }
 
-    private TaskDto translate(Task task){
+    private TaskDto translate(Task task) {
         TaskDto taskDto = new TaskDto();
-        BeanUtils.copyProperties(task,taskDto);
+        BeanUtils.copyProperties(task, taskDto);
         taskDto.setPublishDate(format.format(task.getPublishDate()));
         taskDto.setEndDate(format.format(task.getEndDate()));
         taskDto.setPublisherName(userRepository.findById(task.getPublisher()).getName());
@@ -239,7 +249,7 @@ public class TaskServiceImpl implements TaskService{
 
     private List<TaskDto> translate(List<Task> tasks) {
         List<TaskDto> taskDtos = new ArrayList<>();
-        for(Task task : tasks) {
+        for (Task task : tasks) {
             taskDtos.add(translate(task));
         }
         return taskDtos;

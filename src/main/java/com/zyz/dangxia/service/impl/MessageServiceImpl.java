@@ -7,6 +7,7 @@ import com.zyz.dangxia.mqtt.MqttManager;
 import com.zyz.dangxia.repository.ConversationRepository;
 import com.zyz.dangxia.repository.MessageRepository;
 import com.zyz.dangxia.repository.TaskRepository;
+import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,9 @@ public class MessageServiceImpl implements MessageService {
 
     @Autowired
     private TaskRepository taskRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<MessageDto> getMsgAboutMe(int userId) {
@@ -94,6 +98,7 @@ public class MessageServiceImpl implements MessageService {
         MessageDto messageDto = new MessageDto();
         BeanUtils.copyProperties(message, messageDto);
         messageDto.setDate(format.format(message.getDate()));
+        messageDto.setSenderName(userRepository.findName(message.getSender()));
         return messageDto;
     }
 

@@ -12,6 +12,7 @@ public class MessageDto {
 
     private int sender;
 
+    private String senderName;
 
     private int type;//0->文字消息（默认）、1->语音消息、2->图片消息
 
@@ -72,9 +73,18 @@ public class MessageDto {
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", date='" + date + '\'' +
-                ", senderId=" + sender +
+                ", sender=" + sender +
+                ", senderName='" + senderName + '\'' +
                 ", type=" + type +
                 ", status=" + status +
                 '}';
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
     }
 }

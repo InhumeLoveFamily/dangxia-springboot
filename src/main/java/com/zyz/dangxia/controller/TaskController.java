@@ -110,4 +110,10 @@ public class TaskController {
         return taskService.getPriceSection(classId, content, new Date(dateTime));
     }
 
+    @PostMapping("/newPrice")
+    int changePrice(@RequestParam("newPrice") double newPrice,
+                    @RequestParam("taskId") int taskId) {
+        return taskService.changePrice(newPrice, taskId);
+    }
+
 }

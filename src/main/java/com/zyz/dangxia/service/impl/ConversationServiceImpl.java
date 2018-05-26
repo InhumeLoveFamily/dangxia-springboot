@@ -102,6 +102,7 @@ public class ConversationServiceImpl implements ConversationService {
         MessageDto messageDto = new MessageDto();
         BeanUtils.copyProperties(message, messageDto);
         messageDto.setDate(format.format(message.getDate()));
+        messageDto.setSenderName(userRepository.findName(message.getSender()));
         return messageDto;
     }
 

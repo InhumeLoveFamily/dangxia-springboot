@@ -66,6 +66,8 @@ public interface TaskService {
      */
     int appoint(int taskId, int userId);
 
+    int changePrice(double newPrice, int taskId);
+
     List<TaskClassDto> getClasses();
 
     PriceSection getPriceSection(int classId, String taskContent, Date date);
