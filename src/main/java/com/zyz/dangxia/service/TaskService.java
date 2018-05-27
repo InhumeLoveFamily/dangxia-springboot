@@ -71,4 +71,6 @@ public interface TaskService {
     List<TaskClassDto> getClasses();
 
     PriceSection getPriceSection(int classId, String taskContent, Date date);
+
+    double getPrice(int taskId);
 }

@@ -116,4 +116,9 @@ public class TaskController {
         return taskService.changePrice(newPrice, taskId);
     }
 
+    @GetMapping("/{taskId}/price")
+    double getNewPrice(@PathVariable("taskId") int taskId) {
+        return taskService.getPrice(taskId);
+    }
+
 }

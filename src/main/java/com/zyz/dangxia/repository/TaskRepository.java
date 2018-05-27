@@ -21,4 +21,7 @@ public interface TaskRepository extends JpaRepository<Task,Integer>{
     @Query("select publisher from Task where id = ?1")
     int findTaskPublisherById(int taskId);
 
+    @Query("select price from Task where id = ?1")
+    double findPriceById(int taskId);
+
 }

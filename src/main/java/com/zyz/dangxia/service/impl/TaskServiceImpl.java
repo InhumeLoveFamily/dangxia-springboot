@@ -218,10 +218,16 @@ public class TaskServiceImpl implements TaskService {
                 p = i;
             }
         }
+        logger.info("最终得出的p为{}", p);
         section = PriceSectionUtil.getSection(p);
         logger.info("存入redis");
         evaluationCacheRepository.putPriceSection(handledData.getKey(), section);
         return section;
+    }
+
+    @Override
+    public double getPrice(int taskId) {
+        return taskRepository.findPriceById(taskId);
     }
 
     private TaskClassDto translate(TaskClass taskClass) {
