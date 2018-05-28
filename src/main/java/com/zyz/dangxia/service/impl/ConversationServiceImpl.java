@@ -79,6 +79,10 @@ public class ConversationServiceImpl implements ConversationService {
             messageService.push(conversation.getId(), initiatorId, new Date(), 0,
                     task.getRequireVerify() == 1 ?
                             "您好，也许我能提供帮助。" : "您好，由我来为您服务。",0);
+        } else {
+            // 否则就是接单成功，需要由任务发布者发一条消息给接单者
+            messageService.push(conversation.getId(), task.getPublisher(), new Date(), -1,
+                    MessageDto.ORDER_CREATED, 0);
         }
         return conversation.getId();
     }
@@ -91,8 +95,7 @@ public class ConversationServiceImpl implements ConversationService {
 
     @Override
     public ConversationDto get(int id) {
-        return translate(conversationRepository.findById(id
-        ));
+        return translate(conversationRepository.findById(id));
     }
 
     private MessageDto translate(Message message) {

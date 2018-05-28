@@ -4,6 +4,7 @@ import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
 import com.zyz.dangxia.bigdata.HandledDataList;
 import com.zyz.dangxia.bigdata.PriceSectionUtil;
 import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.dto.MessageDto;
 import com.zyz.dangxia.dto.PriceSection;
 import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
@@ -11,9 +12,11 @@ import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Task;
 import com.zyz.dangxia.entity.TaskClass;
 import com.zyz.dangxia.entity.User;
+import com.zyz.dangxia.repository.ConversationRepository;
 import com.zyz.dangxia.repository.EvaluationCacheRepository;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
+import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +40,12 @@ public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MessageService messageService;
+
+    @Autowired
+    private ConversationRepository conversationRepository;
 
     @Override
     public List<TaskDto> getAll() {
@@ -147,15 +156,20 @@ public class TaskServiceImpl implements TaskService {
 
 //        task.set(userId);
         taskRepository.saveAndFlush(task);
+        // 将消息发送给接单者
+
         return 1;
     }
 
     @Override
-    public int changePrice(double newPrice, int taskId) {
+    public int changePrice(double newPrice, int taskId, int receiverId) {
         if (newPrice < 0) return -1;
         Task task = taskRepository.findById(taskId);
         task.setPrice(newPrice);
         taskRepository.saveAndFlush(task);
+        // 修改成功后需要通知接单者
+        messageService.push(conversationRepository.findIdByTaskIdAndInitiatorId(taskId, receiverId),
+                task.getPublisher(), new Date(), -1, MessageDto.PRICE_CHANGED, 0);
         return 1;
     }
 

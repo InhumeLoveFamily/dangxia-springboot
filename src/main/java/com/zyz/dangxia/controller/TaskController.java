@@ -112,8 +112,9 @@ public class TaskController {
 
     @PostMapping("/newPrice")
     int changePrice(@RequestParam("newPrice") double newPrice,
-                    @RequestParam("taskId") int taskId) {
-        return taskService.changePrice(newPrice, taskId);
+                    @RequestParam("taskId") int taskId,
+                    @RequestParam("receiverId") int receiverId) {
+        return taskService.changePrice(newPrice, taskId, receiverId);
     }
 
     @GetMapping("/{taskId}/price")

@@ -1,0 +1,22 @@
+﻿server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dangxia?useSSL=false
+#    url: jdbc:mysql://140.143.225.154:3306/dangxia?useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456789
+  jpa:
+    hibernate:
+    #验证手写的entity是否与实际的表一致，如果不一致则报错
+      ddl-auto: validate
+    show-sql: true
+  redis:
+#    host: 172.0.0.1
+    host: localhost
+    port: 6379
+    database: 0
+#    host: 140.143.225.154
+mqtt:
+  id: -3

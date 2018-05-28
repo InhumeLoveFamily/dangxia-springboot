@@ -10,6 +10,7 @@ import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.annotation.PostConstruct;
 
@@ -25,6 +26,10 @@ public class MqttManager {
 
     //mqtt服务器端口
     private static String port = "1883";
+
+    // 连接时的ID
+    @Value("${mqtt.id:-3}")
+    private String ID = "-3";
 
     // 单例
     private static MqttManager mInstance = null;
@@ -138,7 +143,7 @@ public class MqttManager {
                 /*sp.getString("password",""),*/
                 null,
                 null,
-                String.valueOf(-3));
+                ID);
     }
 
     /**

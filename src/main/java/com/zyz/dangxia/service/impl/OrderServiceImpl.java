@@ -13,6 +13,7 @@ import com.zyz.dangxia.repository.OrderRepository;
 import com.zyz.dangxia.repository.TaskRepository;
 import com.zyz.dangxia.repository.UserRepository;
 import com.zyz.dangxia.service.ConversationService;
+import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.OrderService;
 import com.zyz.dangxia.service.TaskService;
 import org.springframework.beans.BeanUtils;
@@ -38,6 +39,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     ConversationService conversationService;
+
+    @Autowired
+    MessageService messageService;
 
     @Autowired
     UserRepository userRepository;
@@ -66,6 +70,7 @@ public class OrderServiceImpl implements OrderService {
             throw new RuntimeException();
         }
         Task task = taskRepository.findById(taskId);
+        //检查任务是否存在，并且没有被接单
         if (task == null) {
             throw new RuntimeException();
         }
@@ -74,6 +79,7 @@ public class OrderServiceImpl implements OrderService {
         }
         task.setOrderId(order.getId());
         taskRepository.saveAndFlush(task);
+        //向接单方发送一条接单成功的消息
         //发起对话
         return conversationService.initiateConversation(executorId, taskId);
 
