@@ -73,4 +73,18 @@ public interface TaskService {
     PriceSection getPriceSection(int classId, String taskContent, Date date);
 
     double getPrice(int taskId);
+
+    /**
+     * @param userId 查询者id
+     * @return 自己服务过的记录
+     */
+    List<TaskDto> getServed(int userId);
+
+    /**
+     * 获取自己被服务过的记录
+     *
+     * @param userId 查询者id
+     * @return 自己被服务过的记录
+     */
+    List<TaskDto> getBeServed(int userId);
 }

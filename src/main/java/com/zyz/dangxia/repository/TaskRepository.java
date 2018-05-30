@@ -24,4 +24,10 @@ public interface TaskRepository extends JpaRepository<Task,Integer>{
     @Query("select price from Task where id = ?1")
     double findPriceById(int taskId);
 
+    @Query(nativeQuery = true, value = "select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type from task LEFT JOIN dx_order ON task.order_id = dx_order.id where dx_order.executor_id = ?1 and dx_order.`status` = '1'")
+    List<Task> findServedTasks(int userId);
+
+    @Query(nativeQuery = true, value = "select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type from task LEFT JOIN dx_order ON task.order_id = dx_order.id where task.publisher = ?1 and dx_order.`status` = '1'")
+    List<Task> findBeServedTask(int userId);
+
 }

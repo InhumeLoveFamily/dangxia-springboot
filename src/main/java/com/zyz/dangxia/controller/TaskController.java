@@ -122,4 +122,13 @@ public class TaskController {
         return taskService.getPrice(taskId);
     }
 
+    @GetMapping("/{userId}/served")
+    List<TaskDto> getServed(@PathVariable("userId") int userId) {
+        return taskService.getServed(userId);
+    }
+
+    @GetMapping("/{userId}/beServed")
+    List<TaskDto> getBeServed(@PathVariable("userId") int userId) {
+        return taskService.getBeServed(userId);
+    }
 }

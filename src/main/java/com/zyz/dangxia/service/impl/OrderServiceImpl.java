@@ -60,6 +60,7 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     //创建订单->在task表中保存订单号->新建对话->发送信息，并更新对'''话中的lastwords
     public int add(int taskId, int executorId, int status) {
+        //先找一下有没有相关order
         Order order = new Order();
         order.setExecutorId(executorId);
         order.setOrderDate(new Date());

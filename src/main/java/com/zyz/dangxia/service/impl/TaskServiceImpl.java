@@ -12,10 +12,7 @@ import com.zyz.dangxia.entity.HandledData;
 import com.zyz.dangxia.entity.Task;
 import com.zyz.dangxia.entity.TaskClass;
 import com.zyz.dangxia.entity.User;
-import com.zyz.dangxia.repository.ConversationRepository;
-import com.zyz.dangxia.repository.EvaluationCacheRepository;
-import com.zyz.dangxia.repository.TaskRepository;
-import com.zyz.dangxia.repository.UserRepository;
+import com.zyz.dangxia.repository.*;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
 import org.slf4j.Logger;
@@ -46,6 +43,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private ConversationRepository conversationRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     @Override
     public List<TaskDto> getAll() {
@@ -242,6 +242,19 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public double getPrice(int taskId) {
         return taskRepository.findPriceById(taskId);
+    }
+
+    @Override
+    public List<TaskDto> getServed(int userId) {
+        //先找到自己是执行者的，并且已完成的订单
+//        List<Integer> orderIds = orderRepository.
+//        return translate(taskRepository);
+        return translate(taskRepository.findServedTasks(userId));
+    }
+
+    @Override
+    public List<TaskDto> getBeServed(int userId) {
+        return translate(taskRepository.findBeServedTask(userId));
     }
 
     private TaskClassDto translate(TaskClass taskClass) {
