@@ -78,7 +78,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDto> getAccepted(int userId) {
-        return translate(taskRepository.findByOrderIdIsOrderByPublishDateDesc(userId));
+        return translate(taskRepository.findMyTodoTask(userId));
     }
 
     @Override

@@ -24,7 +24,7 @@ public class PriceSectionUtil {
             case 9:
                 return new PriceSection(1000, 2000);
             default:
-                return new PriceSection(20, 50);
+                return new PriceSection(0, 20);
         }
     }
 

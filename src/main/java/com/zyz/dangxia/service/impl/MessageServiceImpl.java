@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 @Service
 public class MessageServiceImpl implements MessageService {
 
@@ -54,20 +55,20 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public int read(int msgId) {
         Message message = messageRepository.findOne(msgId);
-        if(message == null) {
+        if (message == null) {
             return -1;
         }
         message.setStatus(1);
         messageRepository.saveAndFlush(message);
         message = messageRepository.findOne(msgId);
-        if(message.getStatus() == 1) {
+        if (message.getStatus() == 1) {
             return 1;
         }
         return 0;
     }
 
     @Override
-    public int push(int conversationId, int sender, Date date, int type, String content,int status) {
+    public int push(int conversationId, int sender, Date date, int type, String content, int status) {
         Message message = new Message();
         message.setConversationId(conversationId);
         message.setStatus(status);
@@ -77,12 +78,12 @@ public class MessageServiceImpl implements MessageService {
         message.setType(type);
         messageRepository.saveAndFlush(message);
         logger.info("已成功保存信息");
-
         Conversation conversation = conversationRepository.findById(conversationId);
-        conversation.setLastWords(content);
-        conversation.setLastDate(date);
-        conversationRepository.saveAndFlush(conversation);
-
+        if (!content.contains(MessageDto.ORDER_CREATED) && !content.contains(MessageDto.PRICE_CHANGED)) {
+            conversation.setLastWords(content);
+            conversation.setLastDate(date);
+            conversationRepository.saveAndFlush(conversation);
+        }
         //找到消息的接收者，要么是会话发起者(conversation.initiatorId)，要么是任务发布者task.publisherId
         int receiverId = conversation.getInitiatorId() == sender ?
                 taskRepository.findTaskPublisherById(conversation.getTaskId()) : conversation.getInitiatorId();

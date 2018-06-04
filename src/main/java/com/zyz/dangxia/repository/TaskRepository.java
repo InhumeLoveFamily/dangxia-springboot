@@ -11,6 +11,9 @@ public interface TaskRepository extends JpaRepository<Task,Integer>{
     List<Task> findByOrderIdIsAndTypeIsOrderByPublishDateDesc(int id,int type);
     List<Task> findByPublisherIsOrderByPublishDateDesc(int id);
 
+    @Query(nativeQuery = true, value = "select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type from task LEFT JOIN dx_order ON task.order_id = dx_order.id where dx_order.executor_id = ?1 and dx_order.`status` = '0'")
+    List<Task> findMyTodoTask(int userId);
+
     @Query("select id from Task where publisher = ?1")
     List<Integer> findTaskIds(int userId);
 
