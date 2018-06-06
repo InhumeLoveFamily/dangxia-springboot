@@ -1,6 +1,7 @@
 package com.zyz.dangxia.controller;
 
 import com.zyz.dangxia.dto.PriceSection;
+import com.zyz.dangxia.dto.TaskDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -27,8 +29,21 @@ public class TaskControllerTest {
 
     @Test
     public void getEvaluation() {
-        PriceSection priceSection = taskController.getEvaluation(new Date().getTime(), 1,
-                "来一位大神带一带我王者荣耀啊，农药来开黑呀");
+        PriceSection priceSection = taskController.getEvaluation(new Date().getTime(), 10,
+                "来个健身私教");
         logger.info("price = {}", priceSection.toString());
+    }
+
+    @Test
+    public void getMyTodoTask() {
+        List<TaskDto> result = taskController.getAccpted(21);
+        for (TaskDto taskDto : result) {
+            logger.info(taskDto.toString());
+        }
+    }
+
+    @Test
+    public void changePrice() {
+        logger.info("result = {}", taskController.changePrice(233, 27, 1));
     }
 }

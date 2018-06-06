@@ -3,6 +3,7 @@ package com.zyz.dangxia.service;
 import com.zyz.dangxia.dto.ConversationDto;
 import com.zyz.dangxia.dto.MessageDto;
 
+import java.util.Date;
 import java.util.List;
 
 public interface ConversationService {
@@ -27,6 +28,8 @@ public interface ConversationService {
      * @return
      */
     List<MessageDto> getMsgList(int conId);
+
+    List<MessageDto> getMsgList(int conId, Date beginDate);
 
     ConversationDto get(int id);
 }

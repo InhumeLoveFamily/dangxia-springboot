@@ -90,7 +90,11 @@ public class ConversationServiceImpl implements ConversationService {
     @Override
     public List<MessageDto> getMsgList(int conId) {
         return translate(messageRepository.findByConversationIdOrderByDateAsc(conId));
+    }
 
+    @Override
+    public List<MessageDto> getMsgList(int conId, Date beginDate) {
+        return translate(messageRepository.get(conId, beginDate));
     }
 
     @Override
@@ -104,6 +108,7 @@ public class ConversationServiceImpl implements ConversationService {
         }
         MessageDto messageDto = new MessageDto();
         BeanUtils.copyProperties(message, messageDto);
+        messageDto.setMsgId(message.getId());
         messageDto.setDate(format.format(message.getDate()));
         messageDto.setSenderName(userRepository.findName(message.getSender()));
         return messageDto;

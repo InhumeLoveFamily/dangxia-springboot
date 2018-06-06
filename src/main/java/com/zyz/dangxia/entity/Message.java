@@ -26,7 +26,7 @@ public class Message {
     @Column(name = "status")
     private int status;
 
-    @Column(name = "conversationId")
+    @Column(name = "conversation_id")
     private int conversationId;
 
     public int getConversationId() {

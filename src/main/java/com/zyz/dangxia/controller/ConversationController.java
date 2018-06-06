@@ -5,6 +5,8 @@ import com.zyz.dangxia.dto.MessageDto;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
 import jdk.nashorn.internal.objects.annotations.Getter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/conversation")
 public class ConversationController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ConversationController.class);
 
     @Autowired
     private ConversationService conversationService;
@@ -31,20 +35,27 @@ public class ConversationController {
                     @RequestParam("senderId") int senderId,
                     @RequestParam("content") String content,
                     @RequestParam("date") long date,
-                    @RequestParam("type") int type){
-        return messageService.push(conversationId,senderId,new Date(date),type,content,0);
+                    @RequestParam("type") int type) {
+        return messageService.push(conversationId, senderId, new Date(date), type, content, 0);
     }
 
     @PutMapping("/{senderId}/{taskId}")
     public int init(@PathVariable("senderId") int senderId,
                     @PathVariable("taskId") int taskId) {
-        return conversationService.initiateConversation(senderId,taskId);
+        return conversationService.initiateConversation(senderId, taskId);
     }
 
     @GetMapping("/{conversationId}/msglist")
     public List<MessageDto> list(@PathVariable("conversationId") int conId) {
-        return  conversationService.getMsgList(conId);
+        return conversationService.getMsgList(conId);
 
+    }
+
+    @GetMapping("/{conversationId}/msgListByDate")
+    public List<MessageDto> listByDate(@PathVariable("conversationId") int conversationId,
+                                       long beginDate) {
+        logger.info("beginDate={}", beginDate);
+        return conversationService.getMsgList(conversationId, new Date(beginDate));
     }
 
     @GetMapping("/{conversationId}")
