@@ -1,0 +1,1632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f5307c8-7636-4b8f-a327-05275deeef36" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/zhuang_ge.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/TIM截图20180405131614.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload-dir/111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload-dir/TIM截图20180404214454.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/base/FileLoaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/FileLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dangxia@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dangxia@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dangxia@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dangxia: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="dangxia" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ImageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#2572#2573#0" expanded="true" />
+                <element signature="e#2623#2624#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2964">
+              <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PictureRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskClassRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskClassRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/FileLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConversationController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ConversationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1066">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileLoaderTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/base/FileLoaderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Aspect" />
+        <option value="Singleton" />
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>receiver_id</find>
+      <find>convertion</find>
+      <find>redis</find>
+      <find>是属于</find>
+      <find>最终得出</find>
+      <find>acce</find>
+      <find>request</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>conversation</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandleKeywordUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/config/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/PriceSection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/EvaluationCacheRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/Raw2HandledDataUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandledDataList.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/MqttCallbackBus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/SubPubQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/DangxiaApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/MqttMsgBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/HandledData.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/MessageServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/OrderStateDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/ConversationRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-release.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/MqttManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/TaskRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/OrderRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/TaskServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/PriceSectionUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/controller/TaskControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/MessageDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/ConversationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/ConversationServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ConversationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/MessageRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Pictrue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Picture.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/base/FileLoaderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/FileLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ImageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\apache-maven-3.5.0\localWarehouse" />
+        <option name="mavenHome" value="E:/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="E:\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dangxia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dangxia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dangxia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="dangxia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="Userre&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/repository/UserRepository.java&#10;taskcon&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/controller/TaskController.java&#10;Taskre&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/repository/TaskRepository.java&#10;usere&#9;PSI&#9;JAVA://com.zyz.dangxia.repository.UserRepository&#10;orderservi&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java&#10;Hand&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/entity/HandledData.java&#10;Thread&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/ThreadPoolExecutor.java&#10;ApplicationCon&#9;FILE&#9;jar://E:/apache-maven-3.5.0/localWarehouse/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/ApplicationContext.class&#10;HashMap&#9;PSI&#9;JAVA://java.util.HashMap&#10;ApplicationContext&#9;PSI&#9;JAVA://org.springframework.context.ApplicationContext&#10;Executors&#9;PSI&#9;JAVA://java.util.concurrent.Executors&#10;ExecutorSer&#9;PSI&#9;JAVA://java.util.concurrent.ExecutorService&#10;Springfac&#9;PSI&#9;JAVA://org.springframework.core.io.support.SpringFactoriesLoader&#10;Stack&#9;PSI&#9;JAVA://java.util.Stack&#10;CopyOnWr&#9;PSI&#9;JAVA://java.util.concurrent.CopyOnWriteArrayList&#10;Linked&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/java/util/concurrent/LinkedBlockingQueue.class&#10;ThreadLoca&#9;PSI&#9;JAVA://java.lang.ThreadLocal&#10;UserC&#9;FILE&#9;file://D:/J2EE/dangxia/src/main/java/com/zyz/dangxia/controller/UserController.java&#10;Userser&#9;PSI&#9;JAVA://com.zyz.dangxia.service.UserService" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zyz.dangxia.base" />
+      <recent name="com.zyz.dangxia.repository" />
+      <recent name="com.zyz.dangxia.service.impl" />
+      <recent name="com.zyz.dangxia.bigdata" />
+      <recent name="com.zyz.dangxia.controller" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zyz.dangxia" />
+      <recent name="com.zyz.dangxia.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\J2EE\dangxia\src\main\webapp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\J2EE\dangxia\src\main\resources" />
+      <recent name="D:\J2EE\dangxia\src\main\java\com\zyz\dangxia\base" />
+      <recent name="D:\J2EE\dangxia\src\main\java\com\zyz\dangxia\mqtt" />
+      <recent name="D:\J2EE\dangxia\src\main\java\com\zyz\dangxia\dto" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.zyz.dangxia.dto" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DangxiaApplication">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="ConversationServiceImplTest.getMsgList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dangxia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyz.dangxia.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zyz.dangxia.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zyz.dangxia.service.impl.ConversationServiceImplTest" />
+      <option name="METHOD_NAME" value="getMsgList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ConversationServiceImplTest.getMsgList1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dangxia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyz.dangxia.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zyz.dangxia.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zyz.dangxia.service.impl.ConversationServiceImplTest" />
+      <option name="METHOD_NAME" value="getMsgList1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="FileLoaderTest.load" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dangxia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyz.dangxia.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zyz.dangxia.base" />
+      <option name="MAIN_CLASS_NAME" value="com.zyz.dangxia.base.FileLoaderTest" />
+      <option name="METHOD_NAME" value="load" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TaskControllerTest.getMyTodoTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dangxia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyz.dangxia.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zyz.dangxia.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.zyz.dangxia.controller.TaskControllerTest" />
+      <option name="METHOD_NAME" value="getMyTodoTask" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TaskServiceImplTest.getBeServed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dangxia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyz.dangxia.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zyz.dangxia.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zyz.dangxia.service.impl.TaskServiceImplTest" />
+      <option name="METHOD_NAME" value="getBeServed" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DangxiaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dangxia" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zyz.dangxia.DangxiaApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.DangxiaApplication" />
+      <item itemvalue="JUnit.TaskServiceImplTest.getBeServed" />
+      <item itemvalue="JUnit.TaskControllerTest.getMyTodoTask" />
+      <item itemvalue="JUnit.ConversationServiceImplTest.getMsgList1" />
+      <item itemvalue="JUnit.ConversationServiceImplTest.getMsgList" />
+      <item itemvalue="JUnit.FileLoaderTest.load" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileLoaderTest.load" />
+        <item itemvalue="JUnit.ConversationServiceImplTest.getMsgList1" />
+        <item itemvalue="JUnit.ConversationServiceImplTest.getMsgList" />
+        <item itemvalue="JUnit.TaskControllerTest.getMyTodoTask" />
+        <item itemvalue="JUnit.TaskServiceImplTest.getBeServed" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f5307c8-7636-4b8f-a327-05275deeef36" name="Default" comment="" />
+      <created>1512370773945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1512370773945</updated>
+      <workItem from="1512370777935" duration="9518000" />
+      <workItem from="1512831362505" duration="710000" />
+      <workItem from="1512835015960" duration="18000" />
+      <workItem from="1512835095041" duration="188000" />
+      <workItem from="1512835708128" duration="97000" />
+      <workItem from="1512878561962" duration="6088000" />
+      <workItem from="1512897795740" duration="1671000" />
+      <workItem from="1517379174200" duration="12511000" />
+      <workItem from="1517470451942" duration="3583000" />
+      <workItem from="1519193220379" duration="1183000" />
+      <workItem from="1519196147365" duration="138000" />
+      <workItem from="1519196685132" duration="149000" />
+      <workItem from="1519203830836" duration="1980000" />
+      <workItem from="1519285868121" duration="3325000" />
+      <workItem from="1519301735682" duration="398000" />
+      <workItem from="1519303168564" duration="1301000" />
+      <workItem from="1519306764495" duration="1064000" />
+      <workItem from="1519308472179" duration="1310000" />
+      <workItem from="1519311053750" duration="224000" />
+      <workItem from="1519312749349" duration="1571000" />
+      <workItem from="1519359390745" duration="5457000" />
+      <workItem from="1519450786445" duration="7489000" />
+      <workItem from="1519462198594" duration="1391000" />
+      <workItem from="1519527070706" duration="11282000" />
+      <workItem from="1519634053988" duration="4173000" />
+      <workItem from="1519701833780" duration="548000" />
+      <workItem from="1519714719464" duration="3217000" />
+      <workItem from="1519788378446" duration="10437000" />
+      <workItem from="1519812024174" duration="4261000" />
+      <workItem from="1519896539636" duration="153000" />
+      <workItem from="1519897151476" duration="849000" />
+      <workItem from="1519967317168" duration="7083000" />
+      <workItem from="1519975329369" duration="47000" />
+      <workItem from="1520061612548" duration="3697000" />
+      <workItem from="1520085763015" duration="824000" />
+      <workItem from="1520214897996" duration="923000" />
+      <workItem from="1520229969680" duration="4000" />
+      <workItem from="1520231175408" duration="614000" />
+      <workItem from="1520395887785" duration="2071000" />
+      <workItem from="1520404945941" duration="809000" />
+      <workItem from="1520583032420" duration="3300000" />
+      <workItem from="1520652052084" duration="1229000" />
+      <workItem from="1520752531846" duration="3661000" />
+      <workItem from="1520947429887" duration="357000" />
+      <workItem from="1521003937944" duration="13000" />
+      <workItem from="1522990180773" duration="668000" />
+      <workItem from="1524290545303" duration="8914000" />
+      <workItem from="1525354067474" duration="5525000" />
+      <workItem from="1525441669932" duration="3756000" />
+      <workItem from="1525446970801" duration="1469000" />
+      <workItem from="1525481305317" duration="19565000" />
+      <workItem from="1525520613715" duration="3011000" />
+      <workItem from="1525525128327" duration="338000" />
+      <workItem from="1525525576672" duration="979000" />
+      <workItem from="1525595789130" duration="2121000" />
+      <workItem from="1525935165206" duration="1288000" />
+      <workItem from="1526005078126" duration="3873000" />
+      <workItem from="1526523178860" duration="2537000" />
+      <workItem from="1526529860439" duration="2390000" />
+      <workItem from="1526567145831" duration="871000" />
+      <workItem from="1526611322379" duration="8581000" />
+      <workItem from="1526801390217" duration="3158000" />
+      <workItem from="1526806776025" duration="4902000" />
+      <workItem from="1526869103441" duration="3719000" />
+      <workItem from="1526873491654" duration="1730000" />
+      <workItem from="1527041911126" duration="663000" />
+      <workItem from="1527045386517" duration="2332000" />
+      <workItem from="1527067238127" duration="123000" />
+      <workItem from="1527067392222" duration="63000" />
+      <workItem from="1527213893236" duration="171000" />
+      <workItem from="1527216498058" duration="308000" />
+      <workItem from="1527219610239" duration="439000" />
+      <workItem from="1527233764778" duration="414000" />
+      <workItem from="1527254725091" duration="4287000" />
+      <workItem from="1527259374227" duration="256000" />
+      <workItem from="1527259811194" duration="507000" />
+      <workItem from="1527296375897" duration="86000" />
+      <workItem from="1527297025619" duration="274000" />
+      <workItem from="1527298972999" duration="7734000" />
+      <workItem from="1527394330459" duration="4144000" />
+      <workItem from="1527493835105" duration="5553000" />
+      <workItem from="1527503887070" duration="2810000" />
+      <workItem from="1527519337934" duration="264000" />
+      <workItem from="1527656752093" duration="6216000" />
+      <workItem from="1527687251738" duration="5547000" />
+      <workItem from="1527730020643" duration="65000" />
+      <workItem from="1527731668542" duration="853000" />
+      <workItem from="1527753459895" duration="3652000" />
+      <workItem from="1527860572393" duration="2663000" />
+      <workItem from="1527904400476" duration="1024000" />
+      <workItem from="1528096650841" duration="9836000" />
+      <workItem from="1528251057860" duration="6706000" />
+      <workItem from="1528510301569" duration="28000" />
+      <workItem from="1528512310135" duration="7633000" />
+      <workItem from="1528521951523" duration="293000" />
+      <workItem from="1528595646053" duration="7013000" />
+      <workItem from="1528613912475" duration="234000" />
+    </task>
+    <task id="LOCAL-00001" summary="测试上传">
+      <created>1512835245018</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512835245018</updated>
+    </task>
+    <task id="LOCAL-00002" summary="上传.idea">
+      <created>1512878649399</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512878649399</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完成短信验证注册功能">
+      <created>1512899508852</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512899508852</updated>
+    </task>
+    <task id="LOCAL-00004" summary="新增任务相关接口">
+      <created>1517475771510</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1517475771510</updated>
+    </task>
+    <task id="LOCAL-00005" summary="新增优化任务相关接口&#10;优化taskdto 方便安卓显示">
+      <created>1519314808636</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519314808636</updated>
+    </task>
+    <task id="LOCAL-00006" summary="新增会话接口&#10;在数据库修改之后，做了对应的适配">
+      <created>1519463058336</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519463058336</updated>
+    </task>
+    <task id="LOCAL-00007" summary="新增接单接口以及发起申请接口">
+      <created>1519647376374</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519647376374</updated>
+    </task>
+    <task id="LOCAL-00008" summary="优化消息推送接口">
+      <created>1519819964687</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519819964687</updated>
+    </task>
+    <task id="LOCAL-00009" summary="新增完成订单接口，订单查询接口">
+      <created>1519974781395</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519974781395</updated>
+    </task>
+    <task id="LOCAL-00010" summary="优化附近任务接口">
+      <created>1520090901907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1520090901907</updated>
+    </task>
+    <task id="LOCAL-00011" summary="新增了查询任务类别列表的接口 适配了新的数据库结构 为日后价格估计算法做准备">
+      <created>1525448542722</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525448542722</updated>
+    </task>
+    <task id="LOCAL-00012" summary="完善了KNN算法基本功能&#10;将数据库中的数据存到内存中&#10;使用蝇量模式，减少了每次KNN计算时对象的创建开销&#10;将不同的大分类对应的样本数据存放于不同的容器中，便于读取&#10;对于这样一个读取次数远远大于写入次数的数据结构，使用了读写锁&#10;在读取上加了读锁，在更新缓存数据时加了写锁&#10;使用@Schedule注解 让容器定时地更新数据">
+      <created>1525525402109</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1525525402109</updated>
+    </task>
+    <task id="LOCAL-00013" summary="新增了在订单完结时，写入样本数据库的操作&#10;对关键词族使用[，、]分割（split）">
+      <created>1526525940014</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1526525940014</updated>
+    </task>
+    <task id="LOCAL-00014" summary="集成了redis对估价结果进行了缓存">
+      <created>1526802879941</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1526802879941</updated>
+    </task>
+    <task id="LOCAL-00015" summary="简化了redis数据的生命周期的维护机制&#10;对可能发生的redis连接失败进行了异常捕捉，防止影响整个业务">
+      <created>1526872815067</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1526872815067</updated>
+    </task>
+    <task id="LOCAL-00016" summary="将对话列表按照最近谈话时间进行排序&#10;修复了完结订单时，直接在样本库中写入价格的bug（应该写入区间号）">
+      <created>1527219889811</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1527219889811</updated>
+    </task>
+    <task id="LOCAL-00017" summary="使用mqtt实现了聊天功能">
+      <created>1527260316406</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1527260316406</updated>
+    </task>
+    <task id="LOCAL-00018" summary="新增了修改价格接口">
+      <created>1527310029137</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527310029137</updated>
+    </task>
+    <task id="LOCAL-00019" summary="新增了修改价格接口&#10;修复了redis模块的一个bug">
+      <created>1527409825921</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1527409825921</updated>
+    </task>
+    <task id="LOCAL-00020" summary="在订单生成时或者价格修改时可以通知申请接单者">
+      <created>1527519496851</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1527519496851</updated>
+    </task>
+    <task id="LOCAL-00021" summary="新增了查询历史数据的功能">
+      <created>1527693547005</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1527693547005</updated>
+    </task>
+    <task id="LOCAL-00022" summary="优化接口">
+      <created>1528096981175</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1528096981175</updated>
+    </task>
+    <task id="LOCAL-00023" summary="新增了根据开始时间查询聊天记录的接口">
+      <created>1528257452310</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1528257452311</updated>
+    </task>
+    <task id="LOCAL-00024" summary="新增了图片上传功能">
+      <created>1528595832665</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1528595832665</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TaskServiceImplTest_getBeServed - 2018.05.30 at 22h 43m 58s.xml">
+      <configuration name="TaskServiceImplTest.getBeServed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskControllerTest_getMyTodoTask - 2018.05.31 at 16h 38m 07s.xml">
+      <configuration name="TaskControllerTest.getMyTodoTask" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskControllerTest_getMyTodoTask - 2018.05.31 at 16h 38m 48s.xml">
+      <configuration name="TaskControllerTest.getMyTodoTask" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversationServiceImplTest_getMsgList1 - 2018.06.06 at 10h 28m 47s.xml">
+      <configuration name="ConversationServiceImplTest.getMsgList1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversationServiceImplTest_getMsgList1 - 2018.06.06 at 10h 29m 27s.xml">
+      <configuration name="ConversationServiceImplTest.getMsgList1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversationServiceImplTest_getMsgList - 2018.06.06 at 10h 36m 01s.xml">
+      <configuration name="ConversationServiceImplTest.getMsgList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversationServiceImplTest_getMsgList1 - 2018.06.06 at 10h 37m 30s.xml">
+      <configuration name="ConversationServiceImplTest.getMsgList1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversationServiceImplTest_getMsgList1 - 2018.06.06 at 10h 47m 18s.xml">
+      <configuration name="ConversationServiceImplTest.getMsgList1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileLoaderTest_load - 2018.06.10 at 10h 28m 16s.xml">
+      <configuration name="FileLoaderTest.load" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileLoaderTest_load - 2018.06.10 at 10h 29m 12s.xml">
+      <configuration name="FileLoaderTest.load" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="282509000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.3299356" />
+      <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32992035" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.16255365" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.36177474" />
+      <window_info anchor="bottom" id="TODO" order="4" weight="0.3287827" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3291714" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287827" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.668942" />
+      <window_info anchor="bottom" id="Spring" order="13" weight="0.32992035" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.32992035" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31813306" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info id="Web" order="3" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3287827" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.3287827" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Spring" order="11" weight="0.32993197" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.9023836" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32993197" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291714" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291714" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3299356" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2725322" />
+      <window_info anchor="right" id="Database" order="5" weight="0.16255365" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.7707151" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="测试上传" />
+    <MESSAGE value="上传.idea" />
+    <MESSAGE value="完成短信验证注册功能" />
+    <MESSAGE value="新增任务相关接口" />
+    <MESSAGE value="新增优化任务相关接口&#10;优化taskdto 方便安卓显示" />
+    <MESSAGE value="新增会话接口&#10;在数据库修改之后，做了对应的适配" />
+    <MESSAGE value="新增接单接口以及发起申请接口" />
+    <MESSAGE value="优化消息推送接口" />
+    <MESSAGE value="新增完成订单接口，订单查询接口" />
+    <MESSAGE value="优化附近任务接口" />
+    <MESSAGE value="新增了查询任务类别列表的接口 适配了新的数据库结构 为日后价格估计算法做准备" />
+    <MESSAGE value="完善了KNN算法基本功能&#10;将数据库中的数据存到内存中&#10;使用蝇量模式，减少了每次KNN计算时对象的创建开销&#10;将不同的大分类对应的样本数据存放于不同的容器中，便于读取&#10;对于这样一个读取次数远远大于写入次数的数据结构，使用了读写锁&#10;在读取上加了读锁，在更新缓存数据时加了写锁&#10;使用@Schedule注解 让容器定时地更新数据" />
+    <MESSAGE value="新增了在订单完结时，写入样本数据库的操作&#10;对关键词族使用[，、]分割（split）" />
+    <MESSAGE value="集成了redis对估价结果进行了缓存" />
+    <MESSAGE value="简化了redis数据的生命周期的维护机制&#10;对可能发生的redis连接失败进行了异常捕捉，防止影响整个业务" />
+    <MESSAGE value="将对话列表按照最近谈话时间进行排序&#10;修复了完结订单时，直接在样本库中写入价格的bug（应该写入区间号）" />
+    <MESSAGE value="使用mqtt实现了聊天功能" />
+    <MESSAGE value="新增了修改价格接口" />
+    <MESSAGE value="新增了修改价格接口&#10;修复了redis模块的一个bug" />
+    <MESSAGE value="在订单生成时或者价格修改时可以通知申请接单者" />
+    <MESSAGE value="新增了查询历史数据的功能" />
+    <MESSAGE value="优化接口" />
+    <MESSAGE value="新增了根据开始时间查询聊天记录的接口" />
+    <MESSAGE value="新增了图片上传功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了图片上传功能" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandledDataList.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="13" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="datas[0]" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>j=9</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/OrderStateDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/ConversationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="80" lean-forward="true" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/EvaluationCacheRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1508">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-release.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/MqttMsgBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mqtt/MqttManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2730">
+          <caret line="105" column="19" selection-start-line="26" selection-start-column="4" selection-end-line="105" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="85" column="24" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/TaskRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/OrderRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/TaskServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/PriceSectionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1274">
+          <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/apache-maven-3.5.0/localWarehouse/org/eclipse/jetty/jetty-util/9.4.7.v20170914/jetty-util-9.4.7.v20170914.jar!/org/eclipse/jetty/util/thread/QueuedThreadPool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/controller/TaskControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/DangxiaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/ConversationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/ConversationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/ConversationServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/MessageDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1508">
+          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" selection-start-line="10" selection-start-column="2" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/MessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="107" selection-start-line="13" selection-start-column="107" selection-end-line="13" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="107" column="45" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1352">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/HandledData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/base/FileLoaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ConversationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1066">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskClassRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2964">
+          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/FileLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/ImageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#2572#2573#0" expanded="true" />
+            <element signature="e#2623#2624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>dangxia:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.6 interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>dangxia</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31985295" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

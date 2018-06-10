@@ -8,20 +8,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 @Component
 public class FileLoader {
+
+    Logger logger = LoggerFactory.getLogger(FileLoader.class);
+
     /**
      * @param file     文件的字节码
      * @param filePath 文件存放的绝对路径
      * @param fileName 文件的名称，包含后缀名
      * @return 文件的访问路径
      */
-    public String uploadFile(byte[] file, String filePath, String fileName) throws IOException {
+    public String upload(byte[] file, String filePath, String fileName) throws IOException {
         File targetFile = new File(filePath);
         if (!targetFile.exists()) {
             targetFile.mkdirs();
@@ -30,6 +30,19 @@ public class FileLoader {
         out.write(file);
         out.flush();
         out.close();
-        return filePath + "\\" + fileName;
+        return filePath + "\\" + fileName;//在数据库中是以反斜杠\的形式存在的，很迷
     }
+
+    public byte[] load(String absolutePath) throws IOException {
+        File file = new File(absolutePath);
+//        if(!file.exists()) {
+//            logger.info("{}路径下的文件并不存在",absolutePath);
+//            return null;
+//        }
+        InputStream in = new FileInputStream(file);
+        byte[] body = new byte[in.available()];
+        in.close();
+        return body;
+    }
+
 }

@@ -11,6 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +31,8 @@ public class UserServiceImpl implements UserService {
     FileLoader fileLoader;
     @Autowired
     PictureRepository pictureRepository;
+    @Autowired
+    private ResourceLoader resourceLoader;
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -82,7 +88,7 @@ public class UserServiceImpl implements UserService {
         String fileName = file.getOriginalFilename();
         logger.info("fileName = {}", fileName);
 
-        String accessPath = fileLoader.uploadFile(file.getBytes(), filePath, fileName);
+        String accessPath = fileLoader.upload(file.getBytes(), filePath, fileName);
         if (accessPath == null) return -1;
         logger.info("accessPath = {}", accessPath);
 
@@ -111,6 +117,19 @@ public class UserServiceImpl implements UserService {
             userRepository.save(user);
         }
         return 1;
+    }
+
+    @Override
+    public ResponseEntity<?> loadIcon(int userId) {
+        String path = pictureRepository.findPath(userId);
+        logger.info("用户{}的头像路径 = {}",userId,path );
+        if(path == null) {
+            return ResponseEntity.notFound().build();
+        }
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("content-type","image/png");
+        return new ResponseEntity<>(resourceLoader.getResource("file:" + path),
+                httpHeaders,HttpStatus.OK);
     }
 
     private UserDto translate(User user) {

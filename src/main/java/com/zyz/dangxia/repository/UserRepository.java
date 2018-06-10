@@ -10,4 +10,5 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
     @Query("select name from User where id = ?1")
     String findName(int id);
+
 }
