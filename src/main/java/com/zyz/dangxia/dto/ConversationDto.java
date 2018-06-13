@@ -1,9 +1,7 @@
 package com.zyz.dangxia.dto;
 
-import com.zyz.dangxia.entity.Task;
 
-import javax.persistence.Column;
-import java.util.Date;
+
 
 public class ConversationDto {
     private int id;

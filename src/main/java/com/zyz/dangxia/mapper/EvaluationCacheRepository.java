@@ -1,4 +1,4 @@
-package com.zyz.dangxia.repository;
+package com.zyz.dangxia.mapper;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;

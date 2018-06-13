@@ -21,3 +21,6 @@ spring:
 #    host: 140.143.225.154
 mqtt:
   id: -3
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.zyz.dangxia.model

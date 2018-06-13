@@ -3,8 +3,6 @@ package com.zyz.dangxia.service;
 import com.zyz.dangxia.dto.PriceSection;
 import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
-import com.zyz.dangxia.entity.Task;
-
 import java.util.Date;
 import java.util.List;
 
@@ -53,10 +51,10 @@ public interface TaskService {
      */
     int delete(int taskId);
 
-    /**
-     * 修改任务
-     */
-    int update(Task task);
+//    /**
+//     * 修改任务
+//     */
+//    int update(TaskDO task);
 
     /**
      * 指定任务给某人执行

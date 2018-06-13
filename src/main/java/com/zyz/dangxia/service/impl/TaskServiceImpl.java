@@ -8,11 +8,13 @@ import com.zyz.dangxia.dto.MessageDto;
 import com.zyz.dangxia.dto.PriceSection;
 import com.zyz.dangxia.dto.TaskClassDto;
 import com.zyz.dangxia.dto.TaskDto;
-import com.zyz.dangxia.entity.HandledData;
-import com.zyz.dangxia.entity.Task;
-import com.zyz.dangxia.entity.TaskClass;
-import com.zyz.dangxia.entity.User;
-import com.zyz.dangxia.repository.*;
+import com.zyz.dangxia.mapper.ConversationMapper;
+import com.zyz.dangxia.mapper.EvaluationCacheRepository;
+import com.zyz.dangxia.mapper.TaskMapper;
+import com.zyz.dangxia.mapper.UserMapper;
+import com.zyz.dangxia.model.HandledDataDO;
+import com.zyz.dangxia.model.TaskClassDO;
+import com.zyz.dangxia.model.TaskDO;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
 import org.slf4j.Logger;
@@ -33,38 +35,36 @@ public class TaskServiceImpl implements TaskService {
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
-    private TaskRepository taskRepository;
+    private TaskMapper taskMapper;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userMapper;
 
     @Autowired
     private MessageService messageService;
 
     @Autowired
-    private ConversationRepository conversationRepository;
+    private ConversationMapper conversationMapper;
 
-    @Autowired
-    private OrderRepository orderRepository;
 
     @Override
     public List<TaskDto> getAll() {
-        return translate(taskRepository.findAll());
+        return translate(taskMapper.list());
     }
 
     @Override
     public TaskDto get(int taskId) {
-        return translate(taskRepository.findById(taskId));
+        return translate(taskMapper.selectByPrimaryKey(taskId));
     }
 
     @Override
     public TaskDto getByOrder(int orderId) {
-        return translate(taskRepository.findByOrderId(orderId));
+        return translate(taskMapper.getByOrderId(orderId));
     }
 
     @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1, 1));
+        List<TaskDto> all = translate(taskMapper.listAcceptableDesc(1));
         List<TaskDto> result = new ArrayList<>();
 
         for (TaskDto taskDto : all) {
@@ -78,18 +78,18 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDto> getAccepted(int userId) {
-        return translate(taskRepository.findMyTodoTask(userId));
+        return translate(taskMapper.listToDo(userId));
     }
 
     @Override
     public List<TaskDto> getPublished(int userId) {
-        return translate(taskRepository.findByPublisherIsOrderByPublishDateDesc(userId));
+        return translate(taskMapper.listPublished(userId));
 
     }
 
     @Override
     public List<TaskDto> getNearbyQuick(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskRepository.findByOrderIdIsAndTypeIsOrderByPublishDateDesc(-1, 0));
+        List<TaskDto> all = translate(taskMapper.listAcceptableDesc(0));
         List<TaskDto> result = new ArrayList<>();
         for (TaskDto taskDto : all) {
             //如果距离小于指定范围
@@ -103,7 +103,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public int add(int publisher, int type, Date publishDate, Date endDate, String content, int requireVerify,
                    String location, double latitude, double longitude, double price, int classId) {
-        Task task = new Task();
+        TaskDO task = new TaskDO();
         task.setContent(content);
         task.setEndDate(endDate);
         task.setOrderId(-1);
@@ -116,10 +116,8 @@ public class TaskServiceImpl implements TaskService {
         task.setType(type);
         task.setClassId(classId);
         task.setRequireVerify(requireVerify);
-        task = taskRepository.saveAndFlush(task);
-        if (task == null) {
-            return -1;
-        }
+        taskMapper.insert(task);
+
         if (task.getPublisher() == publisher) {
             return 1;
         } else {
@@ -129,46 +127,24 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public int delete(int taskId) {
-        Task task = taskRepository.findOne(taskId);
-        if (task == null) {
-            return -1;
-        }
-        try {
-            taskRepository.delete(taskId);
-        } catch (Exception e) {
-            return -1;
-        }
-        return 1;
-    }
-
-    @Override
-    public int update(Task task) {
-        return 0;
+        return taskMapper.deleteByPrimaryKey(taskId);
     }
 
     @Override
     public int appoint(int taskId, int userId) {
-        Task task = taskRepository.findById(taskId);
-        User user = userRepository.findById(userId);
-        if (task == null || user == null) {
-            return -1;
-        }
-
-//        task.set(userId);
-        taskRepository.saveAndFlush(task);
-        // 将消息发送给接单者
-
+        // 此业务已交由ConversationService处理
         return 1;
     }
 
     @Override
     public int changePrice(double newPrice, int taskId, int receiverId) {
         if (newPrice < 0) return -1;
-        Task task = taskRepository.findById(taskId);
+        TaskDO task = new TaskDO();
         task.setPrice(newPrice);
-        taskRepository.saveAndFlush(task);
+        task.setId(taskId);
+        taskMapper.updateByPrimaryKeySelective(task);
         // 修改成功后需要通知接单者
-        messageService.push(conversationRepository.findIdByTaskIdAndInitiatorId(taskId, receiverId),
+        messageService.push(conversationMapper.getIdByInitiatorIdAndTaskId(receiverId,taskId),
                 task.getPublisher(), new Date(), -1, MessageDto.PRICE_CHANGED, 0);
         return 1;
     }
@@ -192,7 +168,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public PriceSection getPriceSection(int classId, String taskContent, Date date) {
-        HandledData handledData = raw2HandledDataUtil.getHandledData(classId, taskContent, date, 0);
+        HandledDataDO handledData = raw2HandledDataUtil.getHandledData(classId, taskContent, date, 0);
         PriceSection section = evaluationCacheRepository
                 .getPriceSection(handledData.getKey());
         if (section != null) {
@@ -241,48 +217,45 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public double getPrice(int taskId) {
-        return taskRepository.findPriceById(taskId);
+        return taskMapper.getPrice(taskId);
     }
 
     @Override
     public List<TaskDto> getServed(int userId) {
-        //先找到自己是执行者的，并且已完成的订单
-//        List<Integer> orderIds = orderRepository.
-//        return translate(taskRepository);
-        return translate(taskRepository.findServedTasks(userId));
+        return translate(taskMapper.listServed(userId));
     }
 
     @Override
     public List<TaskDto> getBeServed(int userId) {
-        return translate(taskRepository.findBeServedTask(userId));
+        return translate(taskMapper.listBeServed(userId));
     }
 
-    private TaskClassDto translate(TaskClass taskClass) {
+    private TaskClassDto translate(TaskClassDO taskClass) {
         TaskClassDto dto = new TaskClassDto();
         BeanUtils.copyProperties(taskClass, dto);
         return dto;
     }
 
-    private List<TaskClassDto> translate1(List<TaskClass> list) {
+    private List<TaskClassDto> translate1(List<TaskClassDO> list) {
         List<TaskClassDto> result = new ArrayList<>();
-        for (TaskClass taskClass : list) {
+        for (TaskClassDO taskClass : list) {
             result.add(translate(taskClass));
         }
         return result;
     }
 
-    private TaskDto translate(Task task) {
+    private TaskDto translate(TaskDO task) {
         TaskDto taskDto = new TaskDto();
         BeanUtils.copyProperties(task, taskDto);
         taskDto.setPublishDate(format.format(task.getPublishDate()));
         taskDto.setEndDate(format.format(task.getEndDate()));
-        taskDto.setPublisherName(userRepository.findById(task.getPublisher()).getName());
+        taskDto.setPublisherName(userMapper.getName(task.getPublisher()));
         return taskDto;
     }
 
-    private List<TaskDto> translate(List<Task> tasks) {
+    private List<TaskDto> translate(List<TaskDO> tasks) {
         List<TaskDto> taskDtos = new ArrayList<>();
-        for (Task task : tasks) {
+        for (TaskDO task : tasks) {
             taskDtos.add(translate(task));
         }
         return taskDtos;

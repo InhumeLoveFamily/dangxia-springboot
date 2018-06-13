@@ -1,16 +1,14 @@
 package com.zyz.dangxia.bigdata;
 
 
-import com.zyz.dangxia.entity.TaskClass;
-import com.zyz.dangxia.repository.TaskClassRepository;
-import com.zyz.dangxia.repository.TaskRepository;
+import com.zyz.dangxia.mapper.TaskClassMapper;
+import com.zyz.dangxia.model.TaskClassDO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,18 +17,18 @@ import java.util.List;
 @Component
 public class TaskClassList {
     Logger logger = LoggerFactory.getLogger(this.getClass());
-    private  List<TaskClass> taskClassList = null;
+    private  List<TaskClassDO> taskClassList = null;
 
-    public  List<TaskClass> getList() {
+    public  List<TaskClassDO> getList() {
         return taskClassList;
     }
 
     @Autowired
-    TaskClassRepository taskClassRepository;
+    TaskClassMapper taskClassMapper;
 
     @PostConstruct
     private void init() {
-        taskClassList = taskClassRepository.findUserful();
+        taskClassList = taskClassMapper.listUseful();
     }
 
 }

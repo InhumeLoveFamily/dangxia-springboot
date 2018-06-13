@@ -1,8 +1,8 @@
 package com.zyz.dangxia.bigdata;
 
-import com.zyz.dangxia.entity.HandledData;
-import com.zyz.dangxia.repository.EvaluationCacheRepository;
-import com.zyz.dangxia.repository.HandledDataRepository;
+import com.zyz.dangxia.mapper.HandledDataMapper;
+import com.zyz.dangxia.model.HandledDataDO;
+import com.zyz.dangxia.mapper.EvaluationCacheRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +26,16 @@ public class HandledDataList {
     // 但是一旦一个线程加了写锁，其它线程无法读取知道写锁被释放
     private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
     @Autowired
-    private HandledDataRepository handledDataRepository;
+    private HandledDataMapper handledDataMapper;
 
     @Autowired
     private EvaluationCacheRepository evaluationCacheRepository;
 
-    private List<HandledData> allDatas;
+    private List<HandledDataDO> allDatas;
 
     private HandledDatasForOneClass[] datas;
 
-    public List<HandledData> getAllDatas() {
+    public List<HandledDataDO> getAllDatas() {
         return allDatas;
     }
 
@@ -63,15 +63,15 @@ public class HandledDataList {
         wLock.lock();
         try {
             //逐个查出各大类的数据，进行赋值
-            allDatas = handledDataRepository.findAll();
+            allDatas = handledDataMapper.listAll();
             datas = new HandledDatasForOneClass[COUNT_OF_CLASSES];
             for (int j = 0; j < COUNT_OF_CLASSES; j++) {
-                List<HandledData> temp = handledDataRepository.findByClassId(j + 1);
+                List<HandledDataDO> temp = handledDataMapper.listByClassId(j+1);
                 logger.info(temp.toString());
                 datas[j] = new HandledDatasForOneClass(temp.size());
 
                 for (int i = 0; i < temp.size(); i++) {
-//                    HandledData data = allDatas.get(i);
+//                    HandledDataDO data = allDatas.get(i);
                     datas[j].dataWithDistance[i][0] = temp.get(i).getC0();
                     datas[j].dataWithDistance[i][1] = temp.get(i).getC1();
                     datas[j].dataWithDistance[i][2] = temp.get(i).getC2();
