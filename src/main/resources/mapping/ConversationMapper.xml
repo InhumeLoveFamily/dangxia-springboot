@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyz.dangxia.mapper.ConversationMapper">
+    <resultMap id="BaseResultMap" type="com.zyz.dangxia.model.ConversationDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="task_id" jdbcType="INTEGER" property="taskId"/>
+        <result column="initiator_id" jdbcType="INTEGER" property="initiatorId"/>
+        <result column="last_date" jdbcType="TIMESTAMP" property="lastDate"/>
+        <result column="last_words" jdbcType="VARCHAR" property="lastWords"/>
+        <result column="init_date" jdbcType="TIMESTAMP" property="initDate"/>
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    id, task_id, initiator_id, last_date, last_words, init_date
+    from conversation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from conversation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.zyz.dangxia.model.ConversationDO">
+    insert into conversation (id, task_id, initiator_id, 
+      last_date, last_words, init_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{taskId,jdbcType=INTEGER}, #{initiatorId,jdbcType=INTEGER}, 
+      #{lastDate,jdbcType=TIMESTAMP}, #{lastWords,jdbcType=VARCHAR}, #{initDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.zyz.dangxia.model.ConversationDO">
+        insert into conversation
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="taskId != null">
+                task_id,
+            </if>
+            <if test="initiatorId != null">
+                initiator_id,
+            </if>
+            <if test="lastDate != null">
+                last_date,
+            </if>
+            <if test="lastWords != null">
+                last_words,
+            </if>
+            <if test="initDate != null">
+                init_date,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="taskId != null">
+                #{taskId,jdbcType=INTEGER},
+            </if>
+            <if test="initiatorId != null">
+                #{initiatorId,jdbcType=INTEGER},
+            </if>
+            <if test="lastDate != null">
+                #{lastDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastWords != null">
+                #{lastWords,jdbcType=VARCHAR},
+            </if>
+            <if test="initDate != null">
+                #{initDate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zyz.dangxia.model.ConversationDO">
+        update conversation
+        <set>
+            <if test="taskId != null">
+                task_id = #{taskId,jdbcType=INTEGER},
+            </if>
+            <if test="initiatorId != null">
+                initiator_id = #{initiatorId,jdbcType=INTEGER},
+            </if>
+            <if test="lastDate != null">
+                last_date = #{lastDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastWords != null">
+                last_words = #{lastWords,jdbcType=VARCHAR},
+            </if>
+            <if test="initDate != null">
+                init_date = #{initDate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zyz.dangxia.model.ConversationDO">
+    update conversation
+    set task_id = #{taskId,jdbcType=INTEGER},
+      initiator_id = #{initiatorId,jdbcType=INTEGER},
+      last_date = #{lastDate,jdbcType=TIMESTAMP},
+      last_words = #{lastWords,jdbcType=VARCHAR},
+      init_date = #{initDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="getByInitiatorIdAndTaskId"
+            resultMap="BaseResultMap">
+    select id, task_id, initiator_id, last_date, last_words, init_date
+    from conversation
+    where initiator_id = #{initiatorId} and task_id = #{taskId}
+  </select>
+    <select id="getIdByInitiatorIdAndTaskId" resultMap="BaseResultMap">
+    select id
+    from conversation
+    where initiator_id = #{initiatorId} and task_id = #{taskId}
+  </select>
+    <select id="listAboutSomeone" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, task_id, initiator_id, last_date, last_words, init_date
+    from conversation
+    where conversation.initiator_id = #{userId}
+    or conversation.task_id in (select task.id from task where task.publisher = #{userId})
+    order by last_date desc
+  </select>
+
+</mapper>

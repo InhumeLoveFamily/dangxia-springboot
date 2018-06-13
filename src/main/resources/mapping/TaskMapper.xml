@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyz.dangxia.mapper.TaskMapper">
+    <resultMap id="BaseResultMap" type="com.zyz.dangxia.model.TaskDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="publisher" jdbcType="INTEGER" property="publisher"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="publish_date" jdbcType="TIMESTAMP" property="publishDate"/>
+        <result column="end_date" jdbcType="TIMESTAMP" property="endDate"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="require_verify" jdbcType="INTEGER" property="requireVerify"/>
+        <result column="location" jdbcType="VARCHAR" property="location"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="class_id" jdbcType="INTEGER" property="classId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, publisher, type, publish_date, end_date, content, require_verify, location, latitude, 
+    longitude, price, order_id, class_id
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from task
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from task
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.zyz.dangxia.model.TaskDO">
+    insert into task (id, publisher, type, 
+      publish_date, end_date, content, 
+      require_verify, location, latitude, 
+      longitude, price, order_id, 
+      class_id)
+    values (#{id,jdbcType=INTEGER}, #{publisher,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{publishDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, 
+      #{requireVerify,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, #{latitude,jdbcType=DOUBLE}, 
+      #{longitude,jdbcType=DOUBLE}, #{price,jdbcType=DOUBLE}, #{orderId,jdbcType=INTEGER}, 
+      #{classId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.zyz.dangxia.model.TaskDO">
+        insert into task
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="publisher != null">
+                publisher,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="publishDate != null">
+                publish_date,
+            </if>
+            <if test="endDate != null">
+                end_date,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="requireVerify != null">
+                require_verify,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="latitude != null">
+                latitude,
+            </if>
+            <if test="longitude != null">
+                longitude,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="orderId != null">
+                order_id,
+            </if>
+            <if test="classId != null">
+                class_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="publisher != null">
+                #{publisher,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="publishDate != null">
+                #{publishDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endDate != null">
+                #{endDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="requireVerify != null">
+                #{requireVerify,jdbcType=INTEGER},
+            </if>
+            <if test="location != null">
+                #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null">
+                #{latitude,jdbcType=DOUBLE},
+            </if>
+            <if test="longitude != null">
+                #{longitude,jdbcType=DOUBLE},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="orderId != null">
+                #{orderId,jdbcType=INTEGER},
+            </if>
+            <if test="classId != null">
+                #{classId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zyz.dangxia.model.TaskDO">
+        update task
+        <set>
+            <if test="publisher != null">
+                publisher = #{publisher,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="publishDate != null">
+                publish_date = #{publishDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="requireVerify != null">
+                require_verify = #{requireVerify,jdbcType=INTEGER},
+            </if>
+            <if test="location != null">
+                location = #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null">
+                latitude = #{latitude,jdbcType=DOUBLE},
+            </if>
+            <if test="longitude != null">
+                longitude = #{longitude,jdbcType=DOUBLE},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="orderId != null">
+                order_id = #{orderId,jdbcType=INTEGER},
+            </if>
+            <if test="classId != null">
+                class_id = #{classId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zyz.dangxia.model.TaskDO">
+    update task
+    set publisher = #{publisher,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      publish_date = #{publishDate,jdbcType=TIMESTAMP},
+      end_date = #{endDate,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=VARCHAR},
+      require_verify = #{requireVerify,jdbcType=INTEGER},
+      location = #{location,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=DOUBLE},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      price = #{price,jdbcType=DOUBLE},
+      order_id = #{orderId,jdbcType=INTEGER},
+      class_id = #{classId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="list" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from task
+    </select>
+    <select id="getByOrderId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from task
+        where order_id = #{orderId}
+    </select>
+
+    <select id="listAcceptableDesc" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from task where order_id = -1 and type = #{taskType}
+        order by task.publish_date desc
+    </select>
+    <select id="listToDo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type
+    from task LEFT JOIN dx_order ON task.order_id = dx_order.id
+    where dx_order.executor_id = #{userId} and dx_order.`status` = 0
+    order by task.publish_date desc
+  </select>
+    <select id="listPublished" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from task
+        where task.publisher = #{userId}
+        order by task.publish_date desc
+    </select>
+    <select id="listServed" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type
+    from task
+    LEFT JOIN dx_order ON task.order_id = dx_order.id
+    where dx_order.executor_id = #{userId} and dx_order.`status` = 1
+    order by task.publish_date desc
+  </select>
+    <select id="listBeServed" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select task.class_id,task.content,task.end_date,task.id,task.latitude,task.longitude,task.location,task.order_id,task.price,task.publisher,task.publish_date,task.require_verify,task.type
+    from task
+    LEFT JOIN dx_order ON task.order_id = dx_order.id
+    where task.publisher = #{userId} and dx_order.`status` = 1
+    order by task.publish_date desc
+  </select>
+    <select id="getPrice" parameterType="java.lang.Integer" resultType="java.lang.Double">
+    select price
+    from task
+    where task.id = #{taskId}
+  </select>
+    <select id="getPublisher" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select task.publisher
+    from task
+    where task.id = #{taskId}
+  </select>
+</mapper>
