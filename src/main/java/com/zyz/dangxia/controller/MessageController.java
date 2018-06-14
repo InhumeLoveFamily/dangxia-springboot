@@ -21,10 +21,4 @@ public class MessageController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
-    @GetMapping("/{userId}/aboutMe")
-    public List<MessageDto> getMsgAboutMe(@PathVariable("userId") int userId){
-        logger.info("userId = {}",userId);
-        return messageService.getMsgAboutMe(userId);
-    }
 }

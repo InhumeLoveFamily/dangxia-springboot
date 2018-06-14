@@ -64,16 +64,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDto> getNearby(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskMapper.listAcceptableDesc(1));
-        List<TaskDto> result = new ArrayList<>();
-
-        for (TaskDto taskDto : all) {
-            //如果距离小于指定范围
-            if (km(taskDto.getLatitude(), taskDto.getLongitude(), latitude, longitude) < radius) {
-                result.add(taskDto);
-            }
-        }
-        return result;
+        return getNearby(latitude,longitude,radius,1);
     }
 
     @Override
@@ -89,7 +80,11 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDto> getNearbyQuick(double latitude, double longitude, double radius) {
-        List<TaskDto> all = translate(taskMapper.listAcceptableDesc(0));
+        return getNearby(latitude,longitude,radius,0);
+    }
+
+    private List<TaskDto> getNearby(double latitude, double longitude, double radius,int taskType) {
+        List<TaskDto> all = translate(taskMapper.listAcceptableDesc(taskType));
         List<TaskDto> result = new ArrayList<>();
         for (TaskDto taskDto : all) {
             //如果距离小于指定范围
@@ -116,13 +111,7 @@ public class TaskServiceImpl implements TaskService {
         task.setType(type);
         task.setClassId(classId);
         task.setRequireVerify(requireVerify);
-        taskMapper.insert(task);
-
-        if (task.getPublisher() == publisher) {
-            return 1;
-        } else {
-            return -1;
-        }
+        return taskMapper.insert(task);
     }
 
     @Override

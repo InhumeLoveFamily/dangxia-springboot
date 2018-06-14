@@ -1,6 +1,7 @@
 package com.zyz.dangxia.mapper;
 
 import com.zyz.dangxia.model.ConversationDO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,9 +20,10 @@ public interface ConversationMapper {
 
     int updateByPrimaryKey(ConversationDO record);
 
-    ConversationDO getByInitiatorIdAndTaskId(int initiatorId, int taskId);
+    ConversationDO getByInitiatorIdAndTaskId(@Param("initiatorId") int initiatorId,@Param("taskId") int taskId);
+
 
     List<ConversationDO> listAboutSomeone(int userId);
 
-    int getIdByInitiatorIdAndTaskId(int initiatorId, int taskId);
+    int getIdByInitiatorIdAndTaskId(@Param("initiatorId") int initiatorId,@Param("taskId") int taskId);
 }

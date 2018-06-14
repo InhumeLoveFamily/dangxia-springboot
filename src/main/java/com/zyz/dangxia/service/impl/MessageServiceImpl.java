@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService {
@@ -37,15 +35,6 @@ public class MessageServiceImpl implements MessageService {
 
     @Autowired
     private MessageMapper messageMapper;
-
-
-
-    @Override
-    public List<MessageDto> getMsgAboutMe(int userId) {
-//        return translate(
-//                messageRepository.findBySenderIdIsOrReceiverIdIsOrderByDateAsc(userId, userId));
-        return null;
-    }
 
 
     @Override
@@ -83,7 +72,7 @@ public class MessageServiceImpl implements MessageService {
         return 1;
     }
 
-    public MessageDto translate(MessageDO message) {
+    private MessageDto translate(MessageDO message) {
         if (message == null) {
             return null;
         }
@@ -92,13 +81,5 @@ public class MessageServiceImpl implements MessageService {
         messageDto.setDate(format.format(message.getDate()));
         messageDto.setSenderName(userMapper.getName(message.getSender()));
         return messageDto;
-    }
-
-    public List<MessageDto> translate(List<MessageDO> messageList) {
-        List<MessageDto> messageDtos = new ArrayList<>();
-        for (MessageDO message : messageList) {
-            messageDtos.add(translate(message));
-        }
-        return messageDtos;
     }
 }

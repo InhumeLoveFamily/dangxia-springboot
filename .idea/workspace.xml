@@ -1,49 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f5307c8-7636-4b8f-a327-05275deeef36" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dangxia_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dangxia_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0975b291-e54c-4e20-86a4-3671c713fd7f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0975b291-e54c-4e20-86a4-3671c713fd7f.xml" afterDir="false" />
+    <list default="true" id="9f5307c8-7636-4b8f-a327-05275deeef36" name="Default" comment="将JPA完全替换为MyBatis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/DangxiaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/DangxiaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandledDataList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandledDataList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/Raw2HandledDataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/Raw2HandledDataUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/TaskClassList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/TaskClassList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/DistanceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/DistanceUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/ConversationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/ConversationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Conversation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/HandledData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Keyword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Picture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/TaskClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/ConversationRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/EvaluationCacheRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/EvaluationCacheRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/HandledDataRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/KeywordRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/MessageRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/OrderRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/PictureRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskClassRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/KeywordDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/KeywordMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -89,72 +59,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ConversationServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2977#2978#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1716">
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConversationServiceImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/ConversationServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-            </state>
-          </provider>
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java">
+      <file leaf-file-name="ConversationMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ConversationMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="56">
+              <caret line="103" column="42" lean-forward="true" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageServiceImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/MessageServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-              <folding>
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/TaskMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TaskMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="751">
-              <caret line="233" column="29" lean-forward="true" selection-start-line="233" selection-start-column="29" selection-end-line="233" selection-end-column="29" />
-              <folding>
-                <element signature="n#select#0;n#mapper#0;n#!!top" />
                 <element signature="n#delete#0;n#mapper#0;n#!!top" />
                 <element signature="n#insert#0;n#mapper#0;n#!!top" />
                 <element signature="n#insert#1;n#mapper#0;n#!!top" />
@@ -165,13 +89,6 @@
                 <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#8;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#9;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#10;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#11;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#12;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
@@ -179,13 +96,6 @@
                 <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#8;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#9;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#10;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#11;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#12;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
@@ -193,46 +103,17 @@
                 <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#8;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#9;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#10;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#11;n#set#0;n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#update#1;n#mapper#0;n#!!top" />
-                <element signature="n#select#1;n#mapper#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderServiceImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/OrderServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="241" column="45" lean-forward="true" selection-start-line="241" selection-start-column="45" selection-end-line="241" selection-end-column="45" />
+            <state relative-caret-position="-2733">
+              <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,38 +121,75 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MessageMapper.xml">
+      <file leaf-file-name="ConversationMapper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="132" column="66" selection-start-line="132" selection-start-column="66" selection-end-line="132" selection-end-column="66" />
+            <state relative-caret-position="305">
+              <caret line="27" column="103" lean-forward="true" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
               <folding>
-                <element signature="n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#select#0;n#mapper#0;n#!!top" />
-                <element signature="n#delete#0;n#mapper#0;n#!!top" />
-                <element signature="n#insert#0;n#mapper#0;n#!!top" />
-                <element signature="n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#update#1;n#mapper#0;n#!!top" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeywordMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/KeywordMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1716">
+              <caret line="70" column="43" lean-forward="true" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+              <folding>
+                <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeywordMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/KeywordMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConversationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="61" column="69" lean-forward="true" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2901#2902#0" expanded="true" />
+                <element signature="e#2979#2980#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -299,6 +217,7 @@
       <find>最终得出</find>
       <find>acce</find>
       <find>request</find>
+      <find>getByInitiatorIdAndTaskId</find>
     </findStrings>
     <replaceStrings>
       <replace>conversation</replace>
@@ -310,17 +229,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dao/ConversationSqlProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/UserDOMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/DangxiaApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/UserServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/PictureMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/PictureMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/mapper/PictureMapperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" />
@@ -332,13 +245,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/TaskMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationDOMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/MessageDOMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/MessageMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/OrderMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/mapper/ConversationMapperTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/ConversationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/ConversationDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/TaskClassDOMapper.java" />
@@ -349,8 +258,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/KeywordMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/Raw2HandledDataUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/HandledDataDOMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/HandledDataList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/HandledDataDOMapper.xml" />
@@ -361,6 +268,18 @@
         <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/ConversationServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/MessageServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/TaskMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/DistanceUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/ConversationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/KeywordMapper.xml" />
       </list>
     </option>
   </component>
@@ -472,7 +391,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="bigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
@@ -482,34 +410,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dangxia" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
@@ -530,39 +430,22 @@
               <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
               <item name="dangxia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
               <item name="dangxia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dangxia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dangxia" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -624,7 +507,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MessageServiceImplTest.push">
+  <component name="RunManager" selected="Spring Boot.DangxiaApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -929,7 +812,8 @@
       <workItem from="1528684678644" duration="3318000" />
       <workItem from="1528792475244" duration="3457000" />
       <workItem from="1528795965284" duration="2375000" />
-      <workItem from="1528859420785" duration="26865000" />
+      <workItem from="1528859420785" duration="28963000" />
+      <workItem from="1528942440371" duration="5522000" />
     </task>
     <task id="LOCAL-00001" summary="测试上传">
       <created>1512835245018</created>
@@ -1099,7 +983,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528595832665</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="将JPA完全替换为MyBatis">
+      <created>1528889809358</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1528889809358</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1135,7 +1026,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319863000" />
+    <option name="totallyTimeSpent" value="327483000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1150,7 +1041,7 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005365" side_tool="true" weight="0.668942" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.10246781" />
       <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32992035" />
       <window_info id="Capture Tool" order="2" />
@@ -1168,13 +1059,12 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3291714" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287827" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.668942" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49946353" weight="0.668942" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32992035" />
       <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.32992035" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2194206" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22263949" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3287827" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -1183,6 +1073,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.3287827" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="3" />
@@ -1249,7 +1140,8 @@
     <MESSAGE value="优化接口" />
     <MESSAGE value="新增了根据开始时间查询聊天记录的接口" />
     <MESSAGE value="新增了图片上传功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增了图片上传功能" />
+    <MESSAGE value="将JPA完全替换为MyBatis" />
+    <option name="LAST_COMMIT_MESSAGE" value="将JPA完全替换为MyBatis" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1276,93 +1168,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/mapper/PictureMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="13" column="226" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/PictureMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PictureMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="109" column="20" selection-start-line="107" selection-start-column="8" selection-end-line="109" selection-end-column="20" />
-          <folding>
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#2;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/OrderDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/TaskServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/MessageDOMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/OrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1400,13 +1209,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/UserRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/mapper/ConversationMapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -1414,93 +1217,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/TaskRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ConversationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/MessageRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/TaskRepositoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/UserRepositoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/repository/MessageRepositoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/dto/ConversationDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -1512,9 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1547,9 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1557,9 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1570,23 +1281,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/KeywordMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/bigdata/Raw2HandledDataUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1604,37 +1302,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/HandledDataRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/KeywordRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskClassRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/HandledData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/HandledDataRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/KeywordRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/repository/TaskClassRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/entity/HandledData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/model/ConversationDO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -1646,9 +1317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1663,9 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="21" column="37" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1719,17 +1384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2977#2978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MessageMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1772,16 +1426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/MessageServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1796,17 +1440,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/TaskMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="641">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TaskMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
-          <caret line="233" column="29" lean-forward="true" selection-start-line="233" selection-start-column="29" selection-end-line="233" selection-end-column="29" />
+          <caret line="235" column="29" selection-start-line="235" selection-start-column="29" selection-end-line="235" selection-end-column="29" />
           <folding>
             <element signature="n#select#0;n#mapper#0;n#!!top" />
             <element signature="n#delete#0;n#mapper#0;n#!!top" />
@@ -1860,16 +1501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/zyz/dangxia/service/impl/OrderServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1877,10 +1508,171 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/ConversationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-release.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/base/DistanceUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/TaskServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="241" column="45" lean-forward="true" selection-start-line="241" selection-start-column="45" selection-end-line="241" selection-end-column="45" />
+        <state relative-caret-position="-2733">
+          <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1716">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ConversationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="103" column="42" lean-forward="true" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
+          <folding>
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/service/impl/ConversationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="61" column="69" lean-forward="true" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2901#2902#0" expanded="true" />
+            <element signature="e#2979#2980#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/KeywordMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/KeywordMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1716">
+          <caret line="70" column="43" lean-forward="true" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+          <folding>
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zyz/dangxia/mapper/ConversationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="27" column="103" lean-forward="true" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

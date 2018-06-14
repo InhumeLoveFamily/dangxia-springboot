@@ -41,10 +41,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto login(long phone, String password) {
         UserDO user = userMapper.getByPhone(phone);
-        if (user != null) {
-            if (user.getPassword().equals(password)) {
-                return translate(user);
-            }
+        if (user != null && user.getPassword().equals(password)) {
+            return translate(user);
         }
         return null;
     }
