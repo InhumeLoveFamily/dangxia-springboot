@@ -119,18 +119,19 @@
     set status = 1
     where id = #{msgId}
     </update>
-    <select id="listByConversationIdAsc" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="listVisiableAsc" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
         from message
-        where conversation_id = #{conversationId}
+        where conversation_id = #{conversationId} and type != -1
         order by message.date asc
     </select>
-    <select id="listByConversationIdAfterSometimeAsc" resultMap="BaseResultMap">
+    <select id="listVisiableAfterSometimeAsc" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from message
         where conversation_id = #{conversationId} and message.date > #{beginDate,jdbcType=TIMESTAMP}
+        and type != -1
         order by message.date asc
     </select>
 </mapper>

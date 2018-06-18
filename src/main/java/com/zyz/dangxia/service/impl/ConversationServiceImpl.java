@@ -84,12 +84,12 @@ public class ConversationServiceImpl implements ConversationService {
 
     @Override
     public List<MessageDto> getMsgList(int conId) {
-        return translate(messageMapper.listByConversationIdAsc(conId));
+        return translate(messageMapper.listVisiableAsc(conId));
     }
 
     @Override
     public List<MessageDto> getMsgList(int conId, Date beginDate) {
-        return translate(messageMapper.listByConversationIdAfterSometimeAsc(conId, beginDate));
+        return translate(messageMapper.listVisiableAfterSometimeAsc(conId, beginDate));
     }
 
     @Override

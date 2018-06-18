@@ -54,7 +54,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public TaskDto get(int taskId) {
-        return translate(taskMapper.selectByPrimaryKey(taskId));
+        return taskMapper.getDtoByPrimaryKey(taskId);
     }
 
     @Override

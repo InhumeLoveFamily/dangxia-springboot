@@ -9,13 +9,54 @@
         <result column="last_words" jdbcType="VARCHAR" property="lastWords"/>
         <result column="init_date" jdbcType="TIMESTAMP" property="initDate"/>
     </resultMap>
-
+    <resultMap id="DtoResultMap" type="com.zyz.dangxia.dto.ConversationDto">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="initiator_id" jdbcType="INTEGER" property="initiatorId"/>
+        <result column="initiator_name" jdbcType="VARCHAR" property="initiatorName"/>
+        <result column="publisher_name" jdbcType="VARCHAR" property="publisherName"/>
+        <result column="last_date" jdbcType="VARCHAR" property="lastDate"/>
+        <result column="last_words" jdbcType="VARCHAR" property="lastWords"/>
+        <result column="init_date" jdbcType="TIMESTAMP" property="initDate"/>
+        <association property="task"
+                     select="com.zyz.dangxia.mapper.TaskMapper.getDtoByPrimaryKey"
+                     column="task_id"/>
+    </resultMap>
+    <resultMap id="WithMsgListResultMap" type="com.zyz.dangxia.dto.ConversationWithMsgListDto">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="task_id" jdbcType="INTEGER" property="taskId"/>
+        <result column="initiator_id" jdbcType="INTEGER" property="initiatorId"/>
+        <result column="last_date" jdbcType="VARCHAR" property="lastDate"/>
+        <result column="last_words" jdbcType="VARCHAR" property="lastWords"/>
+        <result column="init_date" jdbcType="VARCHAR" property="initDate"/>
+        <collection property="messageList"
+                    select="com.zyz.dangxia.mapper.MessageMapper.listByConversationIdAsc" column="id"/>
+    </resultMap>
+    <sql id="Dto_Column_List">
+        conversation.id, conversation.task_id, conversation.initiator_id,
+        U1.name initiator_name,U2.name publisher_name,
+        DATE_FORMAT(conversation.last_date,'%Y-%m-%d %H:%i:%s') last_date, conversation.last_words,
+        DATE_FORMAT(conversation.init_date,'%Y-%m-%d %H:%i:%s') init_date
+    </sql>
+    <select id="getConversationWithMsgListById" resultMap="WithMsgListResultMap" parameterType="java.lang.Integer">
+        select conversation.id, conversation.initiator_id,
+        DATE_FORMAT(conversation.last_date,'%Y-%m-%d %H:%i:%s') last_date, conversation.last_words,
+        DATE_FORMAT(conversation.init_date,'%Y-%m-%d %H:%i:%s') init_date
+        from conversation where conversation.id = #{conversationId}
+    </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     id, task_id, initiator_id, last_date, last_words, init_date
     from conversation
     where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="getDtoByPrimaryKey" parameterType="java.lang.Integer" resultMap="DtoResultMap">
+        select <include refid="Dto_Column_List"/>
+        from conversation
+        LEFT JOIN user U1 on conversation.initiator_id = U1.id
+        LEFT JOIN task on conversation.task_id = task.id
+        LEFT JOIN user U2 on task.publisher = U2.id
+        where conversation.id = 7
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from conversation
     where id = #{id,jdbcType=INTEGER}

@@ -1,6 +1,7 @@
 package com.zyz.dangxia.mapper;
 
 import com.zyz.dangxia.model.MessageDO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -22,7 +23,7 @@ public interface MessageMapper {
 
     int read(int msgId);
 
-    List<MessageDO> listByConversationIdAsc(int conversationId);
+    List<MessageDO> listVisiableAsc(int conversationId);
 
-    List<MessageDO> listByConversationIdAfterSometimeAsc(int conId, Date beginDate);
+    List<MessageDO> listVisiableAfterSometimeAsc(@Param("conversationId") int conversationId, @Param("beginDate") Date beginDate);
 }

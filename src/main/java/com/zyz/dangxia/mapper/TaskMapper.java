@@ -1,5 +1,6 @@
 package com.zyz.dangxia.mapper;
 
+import com.zyz.dangxia.dto.TaskDto;
 import com.zyz.dangxia.model.TaskDO;
 import org.springframework.stereotype.Repository;
 
@@ -42,4 +43,6 @@ public interface TaskMapper {
     List<TaskDO> listBeServed(int userId);
 
     int getPublisher(int taskId);
+
+    TaskDto getDtoByPrimaryKey(int taskId);
 }

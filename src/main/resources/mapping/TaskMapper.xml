@@ -16,15 +16,44 @@
         <result column="order_id" jdbcType="INTEGER" property="orderId"/>
         <result column="class_id" jdbcType="INTEGER" property="classId"/>
     </resultMap>
+    <resultMap id="TaskDtoResultMap" type="com.zyz.dangxia.dto.TaskDto">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="publisher" jdbcType="INTEGER" property="publisher"/>
+        <result column="publisher_name" jdbcType="VARCHAR" property="publisherName"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="publish_date" jdbcType="VARCHAR" property="publishDate"/>
+        <result column="end_date" jdbcType="VARCHAR" property="endDate"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="require_verify" jdbcType="INTEGER" property="requireVerify"/>
+        <result column="location" jdbcType="VARCHAR" property="location"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="class_id" jdbcType="INTEGER" property="classId"/>
+    </resultMap>
     <sql id="Base_Column_List">
-    id, publisher, type, publish_date, end_date, content, require_verify, location, latitude, 
+    id, publisher, type, publish_date, end_date, content, require_verify, location, latitude,
     longitude, price, order_id, class_id
+  </sql>
+    <!--dto包括对时间戳的格式化，以及发布者昵称的可视化-->
+    <sql id="Dto_Column_List">
+    task.id, task.publisher, task.type,
+    U.name publisher_name,
+    DATE_FORMAT(task.publish_date,'%Y-%m-%d %H:%i:%s') publish_date,
+    DATE_FORMAT(task.end_date,'%Y-%m-%d %H:%i:%s') end_date,
+    task.content, task.require_verify, task.location, task.latitude,
+    task.longitude, task.price, task.order_id, task.class_id
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from task
         where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="getDtoByPrimaryKey" parameterType="java.lang.Integer" resultMap="TaskDtoResultMap">
+        select <include refid="Dto_Column_List"/>
+        from task left join user U on task.publisher = U.id where task.id = #{taskId,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from task
