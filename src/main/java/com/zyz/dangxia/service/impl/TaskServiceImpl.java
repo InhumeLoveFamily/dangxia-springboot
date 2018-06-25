@@ -128,9 +128,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public int changePrice(double newPrice, int taskId, int receiverId) {
         if (newPrice < 0) return -1;
-        TaskDO task = new TaskDO();
+        TaskDO task = taskMapper.selectByPrimaryKey(taskId);
         task.setPrice(newPrice);
-        task.setId(taskId);
         taskMapper.updateByPrimaryKeySelective(task);
         // 修改成功后需要通知接单者
         messageService.push(conversationMapper.getIdByInitiatorIdAndTaskId(receiverId,taskId),

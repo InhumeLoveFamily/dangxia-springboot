@@ -19,6 +19,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,6 +57,7 @@ public class ConversationServiceImpl implements ConversationService {
     }
 
     @Override
+    @Transactional
     public int initiateConversation(int initiatorId, int taskId) {
         TaskDO task = taskMapper.selectByPrimaryKey(taskId);
         //先查找有没有之前创建好的会话
@@ -67,7 +69,7 @@ public class ConversationServiceImpl implements ConversationService {
             conversation.setTaskId(taskId);
             conversation.setInitiatorId(initiatorId);
             conversation.setLastDate(new Date());
-            int result = conversationMapper.insert(conversation);
+            int result = conversationMapper.insertAndGetId(conversation);
             if (result < 1) {
                 throw new RuntimeException();
             }

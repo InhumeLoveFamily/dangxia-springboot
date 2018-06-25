@@ -14,6 +14,8 @@ public interface ConversationMapper {
 
     int insert(ConversationDO record);
 
+    int insertAndGetId(ConversationDO record);
+
     int insertSelective(ConversationDO record);
 
     ConversationDO selectByPrimaryKey(Integer id);

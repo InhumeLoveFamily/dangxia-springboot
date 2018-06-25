@@ -69,6 +69,17 @@
       #{lastDate,jdbcType=TIMESTAMP}, #{lastWords,jdbcType=VARCHAR}, #{initDate,jdbcType=TIMESTAMP}
       )
   </insert>
+    <insert id="insertAndGetId" parameterType="com.zyz.dangxia.model.ConversationDO">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    insert into conversation ( task_id, initiator_id,
+      last_date, last_words, init_date
+      )
+    values ( #{taskId,jdbcType=INTEGER}, #{initiatorId,jdbcType=INTEGER},
+      #{lastDate,jdbcType=TIMESTAMP}, #{lastWords,jdbcType=VARCHAR}, #{initDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
     <insert id="insertSelective" parameterType="com.zyz.dangxia.model.ConversationDO">
         insert into conversation
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -148,7 +159,7 @@
     from conversation
     where initiator_id = #{initiatorId} and task_id = #{taskId}
   </select>
-    <select id="getIdByInitiatorIdAndTaskId" resultMap="BaseResultMap">
+    <select id="getIdByInitiatorIdAndTaskId" resultType="java.lang.Integer">
     select id
     from conversation
     where initiator_id = #{initiatorId} and task_id = #{taskId}
