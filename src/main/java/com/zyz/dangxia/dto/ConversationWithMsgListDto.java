@@ -1,12 +1,11 @@
 package com.zyz.dangxia.dto;
 
+import com.zyz.dangxia.model.MessageDO;
 
+import java.util.List;
 
-
-public class ConversationDto {
+public class ConversationWithMsgListDto {
     private int id;
-
-    private TaskDto task;
 
     private int initiatorId;
 
@@ -20,20 +19,14 @@ public class ConversationDto {
 
     private String initDate;
 
+    private List<MessageDO> messageList;
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public TaskDto getTask() {
-        return task;
-    }
-
-    public void setTask(TaskDto task) {
-        this.task = task;
     }
 
     public int getInitiatorId() {
@@ -84,17 +77,25 @@ public class ConversationDto {
         this.initDate = initDate;
     }
 
+    public List<MessageDO> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<MessageDO> messageList) {
+        this.messageList = messageList;
+    }
+
     @Override
     public String toString() {
-        return "ConversationDto{" +
+        return "ConversationWithMsgListDto{" +
                 "id=" + id +
-                ", task=" + task +
                 ", initiatorId=" + initiatorId +
                 ", initiatorName='" + initiatorName + '\'' +
                 ", publisherName='" + publisherName + '\'' +
                 ", lastDate='" + lastDate + '\'' +
                 ", lastWords='" + lastWords + '\'' +
                 ", initDate='" + initDate + '\'' +
+                ", messageList=" + messageList +
                 '}';
     }
 }

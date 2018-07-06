@@ -3,15 +3,14 @@ package com.zyz.dangxia.service.impl;
 import com.zyz.dangxia.bigdata.PriceSectionUtil;
 import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
 import com.zyz.dangxia.dto.OrderDto;
-import com.zyz.dangxia.dto.PriceSection;
-import com.zyz.dangxia.entity.HandledData;
-import com.zyz.dangxia.entity.Order;
-import com.zyz.dangxia.entity.Task;
-import com.zyz.dangxia.entity.User;
-import com.zyz.dangxia.repository.HandledDataRepository;
-import com.zyz.dangxia.repository.OrderRepository;
-import com.zyz.dangxia.repository.TaskRepository;
-import com.zyz.dangxia.repository.UserRepository;
+import com.zyz.dangxia.mapper.HandledDataMapper;
+import com.zyz.dangxia.mapper.OrderMapper;
+import com.zyz.dangxia.mapper.TaskMapper;
+import com.zyz.dangxia.mapper.UserMapper;
+import com.zyz.dangxia.model.HandledDataDO;
+import com.zyz.dangxia.model.OrderDO;
+import com.zyz.dangxia.model.TaskDO;
+import com.zyz.dangxia.model.UserDO;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.OrderService;
@@ -30,12 +29,11 @@ public class OrderServiceImpl implements OrderService {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    @Autowired
+    TaskMapper taskMapper;
 
     @Autowired
-    OrderRepository orderRepository;
-
-    @Autowired
-    TaskRepository taskRepository;
+    OrderMapper orderMapper;
 
     @Autowired
     ConversationService conversationService;
@@ -44,13 +42,13 @@ public class OrderServiceImpl implements OrderService {
     MessageService messageService;
 
     @Autowired
-    UserRepository userRepository;
+    UserMapper userMapper;
 
     @Autowired
     TaskService taskService;
 
     @Autowired
-    HandledDataRepository handledDataRepository;
+    HandledDataMapper handledDataMapper;
 
     @Autowired
     Raw2HandledDataUtil raw2HandledDataUtil;
@@ -58,19 +56,17 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    //创建订单->在task表中保存订单号->新建对话->发送信息，并更新对'''话中的lastwords
+    // 创建订单->在task表中保存订单号->新建对话->发送信息，并更新对话中的lastwords
     public int add(int taskId, int executorId, int status) {
         //先找一下有没有相关order
-        Order order = new Order();
+        OrderDO order = new OrderDO();
         order.setExecutorId(executorId);
         order.setOrderDate(new Date());
         order.setStatus(0);
         order.setFinishDate(new Date());
-        order = orderRepository.saveAndFlush(order);
-        if (order == null) {
-            throw new RuntimeException();
-        }
-        Task task = taskRepository.findById(taskId);
+        orderMapper.insertAndGetId(order);
+
+        TaskDO task = taskMapper.selectByPrimaryKey(taskId);
         //检查任务是否存在，并且没有被接单
         if (task == null) {
             throw new RuntimeException();
@@ -79,7 +75,7 @@ public class OrderServiceImpl implements OrderService {
             throw new RuntimeException();
         }
         task.setOrderId(order.getId());
-        taskRepository.saveAndFlush(task);
+        taskMapper.updateByPrimaryKey(task);
         //向接单方发送一条接单成功的消息
         //发起对话
         return conversationService.initiateConversation(executorId, taskId);
@@ -93,10 +89,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDto get(int orderId) {
-        return translate(orderRepository.findById(orderId));
+        return translate(orderMapper.selectByPrimaryKey(orderId));
     }
 
-    private OrderDto translate(Order order) {
+    private OrderDto translate(OrderDO order) {
         if (order == null) {
             return null;
         }
@@ -105,13 +101,13 @@ public class OrderServiceImpl implements OrderService {
         orderDto.setFinishDate(format.format(order.getFinishDate()));
         orderDto.setOrderDate(format.format(order.getOrderDate()));
         orderDto.setTaskDto(taskService.getByOrder(order.getId()));
-        orderDto.setExecutorName(userRepository.findById(order.getExecutorId()).getName());
+        orderDto.setExecutorName(userMapper.getName(order.getExecutorId()));
         return orderDto;
     }
 
     @Override
     public OrderDto getByTaskId(int taskId) {
-        return translate(orderRepository.findById(taskRepository.findById(taskId).getOrderId()));
+        return translate(orderMapper.getByTaskId(taskId));
 
     }
 
@@ -123,40 +119,35 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public int cancelAuthor(int userId, int orderId) {
-        User user = userRepository.findById(userId);
+        UserDO user = userMapper.selectByPrimaryKey(userId);
         if (user == null) {
             return 0;
         }
 
-        Task task = taskRepository.findByOrderId(orderId);
+        TaskDO task = taskMapper.getByOrderId(orderId);
         if (task.getOrderId() == -1) {
             return 1;
         }
         task.setOrderId(-1);
-        taskRepository.saveAndFlush(task);
-        Order order = orderRepository.findById(orderId);
-        if (order == null) {
-            throw new RuntimeException();
-        }
-        orderRepository.delete(orderId);
-        return 1;
+        taskMapper.updateByPrimaryKey(task);
+        return orderMapper.deleteByPrimaryKey(orderId);
     }
 
     @Override
     @Transactional
     public int finish(int orderId, Date finishDate) {
-        Order order = orderRepository.findById(orderId);
+        OrderDO order = orderMapper.selectByPrimaryKey(orderId);
         if (orderId == -1 || order == null) {
             throw new RuntimeException();
         }
         order.setStatus(1);
         order.setFinishDate(finishDate);
-        orderRepository.saveAndFlush(order);
-        Task task = taskRepository.findByOrderId(orderId);
+        orderMapper.updateByPrimaryKey(order);
+        TaskDO task = taskMapper.getByOrderId(orderId);
         //在样本数据库中写入数据
-        HandledData data = raw2HandledDataUtil.getHandledData(task.getClassId(),
+        HandledDataDO data = raw2HandledDataUtil.getHandledData(task.getClassId(),
                 task.getContent(), task.getPublishDate(), PriceSectionUtil.getP(task.getPrice()));
-        handledDataRepository.saveAndFlush(data);
-        return 1;
+
+        return handledDataMapper.insert(data);
     }
 }

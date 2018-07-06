@@ -7,6 +7,8 @@ public class TaskDto {
 
     private String publisherName;
 
+    private int classId;
+
     private int orderId;
 
     private int type;

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyz.dangxia.mapper.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.zyz.dangxia.model.MessageDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="date" jdbcType="TIMESTAMP" property="date"/>
+        <result column="sender" jdbcType="INTEGER" property="sender"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="conversation_id" jdbcType="INTEGER" property="conversationId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, content, date, sender, type, status, conversation_id
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.zyz.dangxia.model.MessageDO">
+    insert into message (id, content, date, 
+      sender, type, status, 
+      conversation_id)
+    values (#{id,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
+      #{sender,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{conversationId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.zyz.dangxia.model.MessageDO">
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="date != null">
+                date,
+            </if>
+            <if test="sender != null">
+                sender,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="conversationId != null">
+                conversation_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="date != null">
+                #{date,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sender != null">
+                #{sender,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="conversationId != null">
+                #{conversationId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zyz.dangxia.model.MessageDO">
+        update message
+        <set>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="date != null">
+                date = #{date,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sender != null">
+                sender = #{sender,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="conversationId != null">
+                conversation_id = #{conversationId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zyz.dangxia.model.MessageDO">
+    update message
+    set content = #{content,jdbcType=VARCHAR},
+      date = #{date,jdbcType=TIMESTAMP},
+      sender = #{sender,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      conversation_id = #{conversationId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <update id="read" parameterType="java.lang.Integer">
+    update message
+    set status = 1
+    where id = #{msgId}
+    </update>
+    <select id="listVisiableAsc" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where conversation_id = #{conversationId} and type != -1
+        order by message.date asc
+    </select>
+    <select id="listVisiableAfterSometimeAsc" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where conversation_id = #{conversationId} and message.date > #{beginDate,jdbcType=TIMESTAMP}
+        and type != -1
+        order by message.date asc
+    </select>
+</mapper>

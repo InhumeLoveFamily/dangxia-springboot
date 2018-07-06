@@ -2,10 +2,10 @@ package com.zyz.dangxia.service.impl;
 
 import com.zyz.dangxia.base.FileLoader;
 import com.zyz.dangxia.dto.UserDto;
-import com.zyz.dangxia.entity.Picture;
-import com.zyz.dangxia.entity.User;
-import com.zyz.dangxia.repository.PictureRepository;
-import com.zyz.dangxia.repository.UserRepository;
+import com.zyz.dangxia.mapper.PictureMapper;
+import com.zyz.dangxia.mapper.UserMapper;
+import com.zyz.dangxia.model.PictureDO;
+import com.zyz.dangxia.model.UserDO;
 import com.zyz.dangxia.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,51 +26,51 @@ import java.util.Date;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    UserRepository userRepository;
-    @Autowired
     FileLoader fileLoader;
     @Autowired
-    PictureRepository pictureRepository;
+    PictureMapper pictureMapper;
     @Autowired
     private ResourceLoader resourceLoader;
+    @Autowired
+    private UserMapper userMapper;
 
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public UserDto login(long phone, String password) {
-        User user = userRepository.findByPhone(phone);
-        if (user != null) {
-            if (user.getPassword().equals(password)) {
-                return translate(user);
-            }
+        UserDO user = userMapper.getByPhone(phone);
+        if (user != null && user.getPassword().equals(password)) {
+            return translate(user);
         }
         return null;
     }
 
     @Override
     public UserDto register(long phone, String password) {
+        boolean alreadExsist = true;
         //老用户，修改密码
-        User user = userRepository.findByPhone(phone);
+        UserDO user = userMapper.getByPhone(phone);
         //新用户，初始化信息
         if (user == null) {
-            user = new User();
+            alreadExsist = false;
+            user = new UserDO();
             user.setPhone(phone);
             user.setRegisterDate(new Date());
-            user.setBalance(0);
+            user.setBalance(0D);
             user.setIconId(-1);
             user.setCredit(1);
-            user.setIntegral(0);
+            user.setIntegral(0D);
         }
         user.setPassword(password);
-        user = userRepository.saveAndFlush(user);
+        int result = alreadExsist ? userMapper.updateByPrimaryKey(user) : userMapper.insert(user);
         return translate(user);
     }
 
     @Override
     public UserDto getInfo(int userId) {
-        return translate(userRepository.findById(userId));
+        return translate(userMapper.selectByPrimaryKey(userId));
     }
 
     @Override
@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
         // TODO: 2018/6/9  检查文件是否符合要求
 
         //检查该用户是否存在
-        User user = userRepository.findById(userId);
+        UserDO user = userMapper.selectByPrimaryKey(userId);
         if (user == null) return -1;
 
         String contentType = file.getContentType();
@@ -95,44 +95,44 @@ public class UserServiceImpl implements UserService {
         //上传成功之后将信息记录在数据库
         //先找之前有没有上传过头像，有则替换
         int iconId = user.getIconId();
-        Picture picture = null;
+        PictureDO picture = null;
         if (iconId != -1) {
-            picture = pictureRepository.findById(iconId);
+            picture = pictureMapper.selectByPrimaryKey(iconId);
             if (picture != null) {
                 logger.info("修改已有的记录");
                 picture.setUrl(accessPath);
-                pictureRepository.save(picture);
+                pictureMapper.updateByPrimaryKey(picture);
             }
         }
         //说明以上的操作没有成功
         if (picture == null) {
             logger.info("新建一条记录");
-            picture = new Picture();
+            picture = new PictureDO();
             picture.setType(0);
             picture.setUrl(accessPath);
             picture.setDescription("用户" + userId + "的头像");
             picture.setContent(null);
-            pictureRepository.save(picture);
+            pictureMapper.insertAndGetId(picture);
             user.setIconId(picture.getId());
-            userRepository.save(user);
+            userMapper.updateByPrimaryKey(user);
         }
         return 1;
     }
 
     @Override
     public ResponseEntity<?> loadIcon(int userId) {
-        String path = pictureRepository.findPath(userId);
-        logger.info("用户{}的头像路径 = {}",userId,path );
-        if(path == null) {
+        String path = pictureMapper.getPathByUserId(userId);
+        logger.info("用户{}的头像路径 = {}", userId, path);
+        if (path == null) {
             return ResponseEntity.notFound().build();
         }
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("content-type","image/png");
+        httpHeaders.add("content-type", "image/png");
         return new ResponseEntity<>(resourceLoader.getResource("file:" + path),
-                httpHeaders,HttpStatus.OK);
+                httpHeaders, HttpStatus.OK);
     }
 
-    private UserDto translate(User user) {
+    private UserDto translate(UserDO user) {
         if (user == null) {
             return null;
         }

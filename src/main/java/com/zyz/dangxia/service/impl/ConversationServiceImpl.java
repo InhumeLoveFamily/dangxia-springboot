@@ -3,13 +3,13 @@ package com.zyz.dangxia.service.impl;
 import com.zyz.dangxia.dto.ConversationDto;
 import com.zyz.dangxia.dto.MessageDto;
 import com.zyz.dangxia.dto.TaskDto;
-import com.zyz.dangxia.entity.Conversation;
-import com.zyz.dangxia.entity.Message;
-import com.zyz.dangxia.entity.Task;
-import com.zyz.dangxia.repository.ConversationRepository;
-import com.zyz.dangxia.repository.MessageRepository;
-import com.zyz.dangxia.repository.TaskRepository;
-import com.zyz.dangxia.repository.UserRepository;
+import com.zyz.dangxia.mapper.ConversationMapper;
+import com.zyz.dangxia.mapper.MessageMapper;
+import com.zyz.dangxia.mapper.TaskMapper;
+import com.zyz.dangxia.mapper.UserMapper;
+import com.zyz.dangxia.model.ConversationDO;
+import com.zyz.dangxia.model.MessageDO;
+import com.zyz.dangxia.model.TaskDO;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
@@ -18,6 +18,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,16 +33,16 @@ public class ConversationServiceImpl implements ConversationService {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private ConversationRepository conversationRepository;
+    private ConversationMapper conversationMapper;
 
     @Autowired
-    private TaskRepository taskRepository;
+    private TaskMapper taskMapper;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userMapper;
 
     @Autowired
-    private MessageRepository messageRepository;
+    private MessageMapper messageMapper;
 
     @Autowired
     private MessageService messageService;
@@ -50,35 +52,30 @@ public class ConversationServiceImpl implements ConversationService {
 
     @Override
     public List<ConversationDto> getConversation(int userId) {
-        //找出自己发布的任务相关的会话+自己主动发起的会话
-        List<Integer> myTasks = taskRepository.findTaskIds(userId);
-//        logger.info();
-        List<Conversation> conversations = conversationRepository
-                .findByTaskIdInOrInitiatorIdIsOrderByLastDateDesc(myTasks, userId);
-        return translate1(conversations);
+
+        return translate1(conversationMapper.listAboutSomeone(userId));
     }
 
-
-
     @Override
+    @Transactional
     public int initiateConversation(int initiatorId, int taskId) {
-        Task task = taskRepository.findById(taskId);
+        TaskDO task = taskMapper.selectByPrimaryKey(taskId);
         //先查找有没有之前创建好的会话
-        Conversation conversation = conversationRepository.findByTaskIdAndInitiatorId(taskId,initiatorId);
-        if(conversation == null) {
+        ConversationDO conversation = conversationMapper.getByInitiatorIdAndTaskId(initiatorId, taskId);
+        if (conversation == null) {
             //如果没有则新建
-            conversation = new Conversation();
+            conversation = new ConversationDO();
             conversation.setInitDate(new Date());
             conversation.setTaskId(taskId);
             conversation.setInitiatorId(initiatorId);
             conversation.setLastDate(new Date());
-            conversation = conversationRepository.saveAndFlush(conversation);
-            if (conversation == null) {
+            int result = conversationMapper.insertAndGetId(conversation);
+            if (result < 1) {
                 throw new RuntimeException();
             }
             messageService.push(conversation.getId(), initiatorId, new Date(), 0,
                     task.getRequireVerify() == 1 ?
-                            "您好，也许我能提供帮助。" : "您好，由我来为您服务。",0);
+                            "您好，也许我能提供帮助。" : "您好，由我来为您服务。", 0);
         } else {
             // 否则就是接单成功，需要由任务发布者发一条消息给接单者
             messageService.push(conversation.getId(), task.getPublisher(), new Date(), -1,
@@ -89,20 +86,20 @@ public class ConversationServiceImpl implements ConversationService {
 
     @Override
     public List<MessageDto> getMsgList(int conId) {
-        return translate(messageRepository.findByConversationIdOrderByDateAsc(conId));
+        return translate(messageMapper.listVisiableAsc(conId));
     }
 
     @Override
     public List<MessageDto> getMsgList(int conId, Date beginDate) {
-        return translate(messageRepository.get(conId, beginDate));
+        return translate(messageMapper.listVisiableAfterSometimeAsc(conId, beginDate));
     }
 
     @Override
     public ConversationDto get(int id) {
-        return translate(conversationRepository.findById(id));
+        return translate(conversationMapper.selectByPrimaryKey(id));
     }
 
-    private MessageDto translate(Message message) {
+    private MessageDto translate(MessageDO message) {
         if (message == null) {
             return null;
         }
@@ -110,27 +107,27 @@ public class ConversationServiceImpl implements ConversationService {
         BeanUtils.copyProperties(message, messageDto);
         messageDto.setMsgId(message.getId());
         messageDto.setDate(format.format(message.getDate()));
-        messageDto.setSenderName(userRepository.findName(message.getSender()));
+        messageDto.setSenderName(userMapper.getName(message.getSender()));
         return messageDto;
     }
 
-    private List<MessageDto> translate(List<Message> messageList) {
+    private List<MessageDto> translate(List<MessageDO> messageList) {
         List<MessageDto> messageDtos = new ArrayList<>();
-        for (Message message : messageList) {
+        for (MessageDO message : messageList) {
             messageDtos.add(translate(message));
         }
         return messageDtos;
     }
 
-    private List<ConversationDto> translate1(List<Conversation> conversations) {
+    private List<ConversationDto> translate1(List<ConversationDO> conversations) {
         List<ConversationDto> conversationDtos = new ArrayList<>();
-        for (Conversation conversation : conversations) {
+        for (ConversationDO conversation : conversations) {
             conversationDtos.add(translate(conversation));
         }
         return conversationDtos;
     }
 
-    private ConversationDto translate(Conversation conversation) {
+    private ConversationDto translate(ConversationDO conversation) {
         if (conversation == null) {
             return null;
         }
@@ -138,7 +135,7 @@ public class ConversationServiceImpl implements ConversationService {
         BeanUtils.copyProperties(conversation, conversationDto);
         conversationDto.setInitDate(format.format(conversation.getInitDate()));
         conversationDto.setLastDate(format.format(conversation.getLastDate()));
-        conversationDto.setInitiatorName(userRepository.findById(conversationDto.getInitiatorId()).getName());
+        conversationDto.setInitiatorName(userMapper.getName(conversationDto.getInitiatorId()));
         TaskDto task = taskService.get(conversation.getTaskId());
         conversationDto.setTask(task);
         conversationDto.setPublisherName(task.getPublisherName());

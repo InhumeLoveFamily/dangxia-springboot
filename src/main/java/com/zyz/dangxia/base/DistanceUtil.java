@@ -7,6 +7,7 @@ public class DistanceUtil {
         return Math.PI / 180 * x;
     }
 
+
     public static double distance(double latitude1,double longitude1,double latitude2,double longitude2) {
         return 6370996.81 * Math.acos(
                 Math.sin(p(latitude1)) * Math.sin(p(latitude2)) + Math.cos(p(latitude1)) * Math.cos(p(latitude2)) * Math.cos(p(longitude2)-p(longitude1)));
