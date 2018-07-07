@@ -30,8 +30,6 @@ public class ConversationServiceImpl implements ConversationService {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private ConversationMapper conversationMapper;
 
