@@ -1,6 +1,6 @@
 package com.zyz.dangxia.controller;
 
-import com.zyz.dangxia.dto.UserDto;
+import com.zyz.dangxia.common.account.UserDto;
 import com.zyz.dangxia.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

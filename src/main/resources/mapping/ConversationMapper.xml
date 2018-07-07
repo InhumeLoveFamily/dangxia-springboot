@@ -9,7 +9,7 @@
         <result column="last_words" jdbcType="VARCHAR" property="lastWords"/>
         <result column="init_date" jdbcType="TIMESTAMP" property="initDate"/>
     </resultMap>
-    <resultMap id="DtoResultMap" type="com.zyz.dangxia.dto.ConversationDto">
+    <resultMap id="DtoResultMap" type="com.zyz.dangxia.common.converstion.ConversationDto">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="initiator_id" jdbcType="INTEGER" property="initiatorId"/>
         <result column="initiator_name" jdbcType="VARCHAR" property="initiatorName"/>
@@ -21,7 +21,7 @@
                      select="com.zyz.dangxia.mapper.TaskMapper.getDtoByPrimaryKey"
                      column="task_id"/>
     </resultMap>
-    <resultMap id="WithMsgListResultMap" type="com.zyz.dangxia.dto.ConversationWithMsgListDto">
+    <resultMap id="WithMsgListResultMap" type="com.zyz.dangxia.common.converstion.ConversationWithMsgListDto">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="task_id" jdbcType="INTEGER" property="taskId"/>
         <result column="initiator_id" jdbcType="INTEGER" property="initiatorId"/>

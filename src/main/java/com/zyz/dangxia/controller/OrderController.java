@@ -1,9 +1,8 @@
 package com.zyz.dangxia.controller;
 
-import com.zyz.dangxia.dto.OrderDto;
+import com.zyz.dangxia.common.order.OrderDto;
 import com.zyz.dangxia.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;

@@ -1,6 +1,6 @@
 package com.zyz.dangxia.service;
 
-import com.zyz.dangxia.dto.UserDto;
+import com.zyz.dangxia.common.account.UserDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 

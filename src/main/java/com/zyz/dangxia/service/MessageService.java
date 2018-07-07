@@ -1,9 +1,6 @@
 package com.zyz.dangxia.service;
 
-import com.zyz.dangxia.dto.MessageDto;
-
 import java.util.Date;
-import java.util.List;
 
 public interface MessageService {
     int delete(int msgId);

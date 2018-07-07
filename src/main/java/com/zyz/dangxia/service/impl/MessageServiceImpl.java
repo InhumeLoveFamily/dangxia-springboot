@@ -1,6 +1,6 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
 import com.zyz.dangxia.mapper.ConversationMapper;
 import com.zyz.dangxia.mapper.MessageMapper;
 import com.zyz.dangxia.mapper.TaskMapper;

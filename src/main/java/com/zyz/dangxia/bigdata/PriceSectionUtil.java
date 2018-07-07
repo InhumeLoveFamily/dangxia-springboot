@@ -1,6 +1,6 @@
 package com.zyz.dangxia.bigdata;
 
-import com.zyz.dangxia.dto.PriceSection;
+import com.zyz.dangxia.common.task.PriceSection;
 
 public class PriceSectionUtil {
     public static PriceSection getSection(int p) {

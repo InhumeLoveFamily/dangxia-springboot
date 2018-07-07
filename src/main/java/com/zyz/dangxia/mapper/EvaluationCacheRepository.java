@@ -3,8 +3,7 @@ package com.zyz.dangxia.mapper;
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.runtime.RuntimeSchema;
-import com.zyz.dangxia.dto.PriceSection;
-import org.joda.time.DateTime;
+import com.zyz.dangxia.common.task.PriceSection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +13,6 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.exceptions.JedisException;
 
 import javax.annotation.PostConstruct;
-import java.util.Date;
 
 @Repository
 public class EvaluationCacheRepository {

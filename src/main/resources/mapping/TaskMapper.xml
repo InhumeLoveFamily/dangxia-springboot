@@ -16,7 +16,7 @@
         <result column="order_id" jdbcType="INTEGER" property="orderId"/>
         <result column="class_id" jdbcType="INTEGER" property="classId"/>
     </resultMap>
-    <resultMap id="TaskDtoResultMap" type="com.zyz.dangxia.dto.TaskDto">
+    <resultMap id="TaskDtoResultMap" type="com.zyz.dangxia.common.task.TaskDto">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="publisher" jdbcType="INTEGER" property="publisher"/>
         <result column="publisher_name" jdbcType="VARCHAR" property="publisherName"/>

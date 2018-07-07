@@ -2,7 +2,7 @@ package com.zyz.dangxia.service.impl;
 
 import com.zyz.dangxia.bigdata.PriceSectionUtil;
 import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
-import com.zyz.dangxia.dto.OrderDto;
+import com.zyz.dangxia.common.order.OrderDto;
 import com.zyz.dangxia.mapper.HandledDataMapper;
 import com.zyz.dangxia.mapper.OrderMapper;
 import com.zyz.dangxia.mapper.TaskMapper;

@@ -3,16 +3,13 @@ package com.zyz.dangxia.mqtt;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-
-import javax.annotation.PostConstruct;
 
 /**
  * 在此处，只需要用来发送消息就行

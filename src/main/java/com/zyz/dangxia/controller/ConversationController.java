@@ -1,10 +1,9 @@
 package com.zyz.dangxia.controller;
 
-import com.zyz.dangxia.dto.ConversationDto;
-import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.common.converstion.ConversationDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
