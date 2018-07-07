@@ -13,8 +13,6 @@ import com.zyz.dangxia.model.TaskDO;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +27,6 @@ import java.util.List;
 public class ConversationServiceImpl implements ConversationService {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ConversationMapper conversationMapper;

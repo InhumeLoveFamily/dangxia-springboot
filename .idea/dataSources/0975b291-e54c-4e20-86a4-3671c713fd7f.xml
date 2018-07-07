@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="dangxia@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.9">
     <root id="1">
       <ServerVersion>5.7.17</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1041,7 +1041,7 @@
     </column>
     <column id="263" parent="240" name="status">
       <Position>5</Position>
-      <Comment>0-&gt;订单执行中、-1-&gt;订单删除、1-&gt;订单已结账、2-&gt;订单完成评价 </Comment>
+      <Comment>0-&gt;订单执行中、-1-&gt;订单删除、1-&gt;订单已结账、2-&gt;订单完成评价</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>

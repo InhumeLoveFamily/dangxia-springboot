@@ -1,4 +1,4 @@
-package com.zyz.dangxia.mqtt;
+package com.zyz.dangxia.util.mqtt;
 
 
 import java.util.concurrent.BlockingQueue;

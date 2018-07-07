@@ -1,12 +1,7 @@
-package com.zyz.dangxia.mqtt;
+package com.zyz.dangxia.util.mqtt;
 
 
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by zhuang_ge on 2017/8/23.

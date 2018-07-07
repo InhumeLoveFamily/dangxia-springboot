@@ -1,4 +1,4 @@
-package com.zyz.dangxia.bigdata;
+package com.zyz.dangxia.util.bigdata;
 
 import com.zyz.dangxia.mapper.HandledDataMapper;
 import com.zyz.dangxia.model.HandledDataDO;

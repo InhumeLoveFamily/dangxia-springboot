@@ -1,6 +1,6 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.base.FileLoader;
+import com.zyz.dangxia.util.FileLoader;
 import com.zyz.dangxia.common.account.UserDto;
 import com.zyz.dangxia.mapper.PictureMapper;
 import com.zyz.dangxia.mapper.UserMapper;

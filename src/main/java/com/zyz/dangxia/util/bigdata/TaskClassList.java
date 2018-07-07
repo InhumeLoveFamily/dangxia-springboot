@@ -1,4 +1,4 @@
-package com.zyz.dangxia.bigdata;
+package com.zyz.dangxia.util.bigdata;
 
 
 import com.zyz.dangxia.mapper.TaskClassMapper;
@@ -16,7 +16,6 @@ import java.util.List;
  */
 @Component
 public class TaskClassList {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
     private  List<TaskClassDO> taskClassList = null;
 
     public  List<TaskClassDO> getList() {

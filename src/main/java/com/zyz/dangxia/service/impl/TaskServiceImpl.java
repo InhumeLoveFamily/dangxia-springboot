@@ -1,9 +1,9 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
-import com.zyz.dangxia.bigdata.HandledDataList;
-import com.zyz.dangxia.bigdata.PriceSectionUtil;
-import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.util.bigdata.Raw2HandledDataUtil;
+import com.zyz.dangxia.util.bigdata.HandledDataList;
+import com.zyz.dangxia.util.bigdata.PriceSectionUtil;
+import com.zyz.dangxia.util.bigdata.TaskClassList;
 import com.zyz.dangxia.common.converstion.MessageDto;
 import com.zyz.dangxia.common.task.PriceSection;
 import com.zyz.dangxia.common.task.TaskClassDto;
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static com.zyz.dangxia.base.DistanceUtil.km;
+import static com.zyz.dangxia.util.DistanceUtil.km;
 
 @Service
 public class TaskServiceImpl implements TaskService {

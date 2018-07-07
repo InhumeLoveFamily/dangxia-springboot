@@ -1,6 +1,6 @@
 package com.zyz.dangxia.controller;
 
-import com.zyz.dangxia.bigdata.TaskClassList;
+import com.zyz.dangxia.util.bigdata.TaskClassList;
 import com.zyz.dangxia.common.task.PriceSection;
 import com.zyz.dangxia.common.task.TaskClassDto;
 import com.zyz.dangxia.common.task.TaskDto;

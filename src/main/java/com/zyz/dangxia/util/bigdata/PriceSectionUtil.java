@@ -1,4 +1,4 @@
-package com.zyz.dangxia.bigdata;
+package com.zyz.dangxia.util.bigdata;
 
 import com.zyz.dangxia.common.task.PriceSection;
 
