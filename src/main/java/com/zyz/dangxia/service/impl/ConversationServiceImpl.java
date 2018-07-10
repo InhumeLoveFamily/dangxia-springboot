@@ -47,7 +47,7 @@ public class ConversationServiceImpl implements ConversationService {
     private TaskService taskService;
 
     @Override
-    public List<ConversationDto> getConversation(int userId) {
+    public List<ConversationDto> listByUserId(int userId) {
 
         return translate1(conversationMapper.listAboutSomeone(userId));
     }

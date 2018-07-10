@@ -12,7 +12,7 @@ public interface ConversationService {
      * @param userId 查询者id
      * @return
      */
-    List<ConversationDto> getConversation(int userId);
+    List<ConversationDto> listByUserId(int userId);
 
     /**
      * 发起对话

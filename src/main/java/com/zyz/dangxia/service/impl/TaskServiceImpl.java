@@ -120,6 +120,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    @Deprecated
     public int appoint(int taskId, int userId) {
         // 此业务已交由ConversationService处理
         return 1;

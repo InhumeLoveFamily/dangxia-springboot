@@ -41,11 +41,20 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "form",name = DangxiaConstants.LOGIN_ACCOUNT,value = "account number(phone)",dataType = "Long",defaultValue = DangxiaConstants.BLANK),
+            @ApiImplicitParam(paramType = "form",name = DangxiaConstants.LOGIN_PASSWORD,value = "account password",dataType = "String",defaultValue = DangxiaConstants.BLANK)
+    })
+    @ApiOperation("注册接口")
     public UserDto register(long phone,String password) {
         return userService.register(phone,password);
     }
 
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "path",name = DangxiaConstants.USER_ID,value = "user_id",dataType = "int",defaultValue = DangxiaConstants.BLANK)
+    })
     @GetMapping("/{userId}")
+    @ApiOperation("获取他人信息")
     public UserDto getInfo(@PathVariable("userId") int userId) {
         return userService.getInfo(userId);
     }
