@@ -1,5 +1,6 @@
 ﻿server:
   port: 8081
+  display-name: dangxia
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -16,6 +17,7 @@ spring:
       consul:
         host: 127.0.0.2
         port: 8500
+
         discovery:
           enabled: true
           service-name: ${server.application.name}
@@ -28,3 +30,4 @@ spring:
 #    host: 140.143.225.154
 mqtt:
   id: -3
+

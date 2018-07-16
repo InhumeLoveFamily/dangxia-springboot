@@ -1,7 +1,5 @@
 package com.zyz.dangxia;
 
-import com.orbitz.consul.Consul;
-import com.zyz.dangxia.service.ConsulService;
 import com.zyz.dangxia.util.mqtt.MqttManager;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
@@ -9,19 +7,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 @SpringBootApplication
 @EnableScheduling
-@EnableCaching
+//@EnableCaching
 @EnableSwagger2
 @MapperScan("com.zyz.dangxia.mapper")
 //@EnableDiscoveryClient

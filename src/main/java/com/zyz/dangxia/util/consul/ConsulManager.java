@@ -1,13 +1,11 @@
-package com.zyz.dangxia.service.impl;
+package com.zyz.dangxia.util.consul;
 
 import com.orbitz.consul.AgentClient;
 import com.orbitz.consul.Consul;
 import com.orbitz.consul.HealthClient;
 import com.orbitz.consul.model.agent.ImmutableRegCheck;
 import com.orbitz.consul.model.agent.ImmutableRegistration;
-import com.orbitz.consul.model.health.HealthCheck;
 import com.orbitz.consul.model.health.ServiceHealth;
-import com.zyz.dangxia.service.ConsulService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +15,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 @Service
 @Slf4j
-public class ConsulServiceImpl implements ConsulService {
+public class ConsulManager {
 
     @Autowired
     private Consul consul;
@@ -26,7 +24,7 @@ public class ConsulServiceImpl implements ConsulService {
     private String localHost;
 
     @Value("${server.port:8081}")
-    private int port = 8081;
+    private int port;
 
     @Value("${server.display-name:dangxia}")
     private String serviceName;
@@ -34,11 +32,10 @@ public class ConsulServiceImpl implements ConsulService {
     @PostConstruct
     public void init() {
         log.info("开始自动注册");
-        register(serviceName,"3");
+        register(serviceName,"4");
         log.info("自动注册完成");
     }
 
-    @Override
     public void register(String serviceName, String serviceId) {
         log.info("localhost = {}",localHost);
         String http = String.format("http://%s:%d/health",localHost,port);
@@ -53,7 +50,6 @@ public class ConsulServiceImpl implements ConsulService {
         agentClient.register(registration);
     }
 
-    @Override
     public List<ServiceHealth> listHealthyServices(String serviceName) {
         HealthClient client = consul.healthClient();
         return client.getHealthyServiceInstances(serviceName).getResponse();

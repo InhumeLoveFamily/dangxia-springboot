@@ -20,7 +20,6 @@ public class ConsulConfigBootstrapConfig {
 
     @Bean
     public Consul getConsul() {
-        // TODO: 2018/7/14将ip改为动态的
         return Consul.builder()
                 /*.withHostAndPort(HostAndPort.fromParts("192.168.1.101",port))*/
                 .build();
