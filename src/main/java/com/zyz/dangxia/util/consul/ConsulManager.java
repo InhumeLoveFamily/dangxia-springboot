@@ -28,10 +28,13 @@ public class ConsulServiceImpl implements ConsulService {
     @Value("${server.port:8081}")
     private int port = 8081;
 
+    @Value("${server.display-name:dangxia}")
+    private String serviceName;
+
     @PostConstruct
     public void init() {
         log.info("开始自动注册");
-        register("dangxia1","3");
+        register(serviceName,"3");
         log.info("自动注册完成");
     }
 
