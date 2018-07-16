@@ -47,7 +47,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 //            }
 //        };
 //    }
-    //缓存管理器
+   // 缓存管理器
     @Bean
     public CacheManager cacheManager(@SuppressWarnings("rawtypes") RedisTemplate redisTemplate) {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);

@@ -1,13 +1,13 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.bigdata.Raw2HandledDataUtil;
-import com.zyz.dangxia.bigdata.HandledDataList;
-import com.zyz.dangxia.bigdata.PriceSectionUtil;
-import com.zyz.dangxia.bigdata.TaskClassList;
-import com.zyz.dangxia.dto.MessageDto;
-import com.zyz.dangxia.dto.PriceSection;
-import com.zyz.dangxia.dto.TaskClassDto;
-import com.zyz.dangxia.dto.TaskDto;
+import com.zyz.dangxia.util.bigdata.Raw2HandledDataUtil;
+import com.zyz.dangxia.util.bigdata.HandledDataList;
+import com.zyz.dangxia.util.bigdata.PriceSectionUtil;
+import com.zyz.dangxia.util.bigdata.TaskClassList;
+import com.zyz.dangxia.common.converstion.MessageDto;
+import com.zyz.dangxia.common.task.PriceSection;
+import com.zyz.dangxia.common.task.TaskClassDto;
+import com.zyz.dangxia.common.task.TaskDto;
 import com.zyz.dangxia.mapper.ConversationMapper;
 import com.zyz.dangxia.mapper.EvaluationCacheRepository;
 import com.zyz.dangxia.mapper.TaskMapper;
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static com.zyz.dangxia.base.DistanceUtil.km;
+import static com.zyz.dangxia.util.DistanceUtil.km;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -120,6 +120,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    @Deprecated
     public int appoint(int taskId, int userId) {
         // 此业务已交由ConversationService处理
         return 1;

@@ -1,8 +1,8 @@
 package com.zyz.dangxia.service;
 
-import com.zyz.dangxia.dto.PriceSection;
-import com.zyz.dangxia.dto.TaskClassDto;
-import com.zyz.dangxia.dto.TaskDto;
+import com.zyz.dangxia.common.task.PriceSection;
+import com.zyz.dangxia.common.task.TaskClassDto;
+import com.zyz.dangxia.common.task.TaskDto;
 import java.util.Date;
 import java.util.List;
 

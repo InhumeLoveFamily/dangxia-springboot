@@ -10,6 +10,7 @@ target/
 .settings
 .springBeans
 
+
 ### IntelliJ IDEA ###
 
 *.iws
@@ -24,3 +25,4 @@ dist/
 nbdist/
 .nb-gradle/
 test/
+.idea/

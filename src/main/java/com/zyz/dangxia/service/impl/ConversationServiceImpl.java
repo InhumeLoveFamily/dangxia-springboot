@@ -1,8 +1,8 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.dto.ConversationDto;
-import com.zyz.dangxia.dto.MessageDto;
-import com.zyz.dangxia.dto.TaskDto;
+import com.zyz.dangxia.common.converstion.ConversationDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
+import com.zyz.dangxia.common.task.TaskDto;
 import com.zyz.dangxia.mapper.ConversationMapper;
 import com.zyz.dangxia.mapper.MessageMapper;
 import com.zyz.dangxia.mapper.TaskMapper;
@@ -13,8 +13,6 @@ import com.zyz.dangxia.model.TaskDO;
 import com.zyz.dangxia.service.ConversationService;
 import com.zyz.dangxia.service.MessageService;
 import com.zyz.dangxia.service.TaskService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +47,7 @@ public class ConversationServiceImpl implements ConversationService {
     private TaskService taskService;
 
     @Override
-    public List<ConversationDto> getConversation(int userId) {
+    public List<ConversationDto> listByUserId(int userId) {
 
         return translate1(conversationMapper.listAboutSomeone(userId));
     }

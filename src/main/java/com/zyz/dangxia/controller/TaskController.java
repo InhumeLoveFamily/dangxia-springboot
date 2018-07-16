@@ -1,9 +1,9 @@
 package com.zyz.dangxia.controller;
 
-import com.zyz.dangxia.bigdata.TaskClassList;
-import com.zyz.dangxia.dto.PriceSection;
-import com.zyz.dangxia.dto.TaskClassDto;
-import com.zyz.dangxia.dto.TaskDto;
+import com.zyz.dangxia.util.bigdata.TaskClassList;
+import com.zyz.dangxia.common.task.PriceSection;
+import com.zyz.dangxia.common.task.TaskClassDto;
+import com.zyz.dangxia.common.task.TaskDto;
 import com.zyz.dangxia.service.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

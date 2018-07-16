@@ -1,7 +1,7 @@
 package com.zyz.dangxia.mapper;
 
-import com.zyz.dangxia.dto.ConversationDto;
-import com.zyz.dangxia.dto.ConversationWithMsgListDto;
+import com.zyz.dangxia.common.converstion.ConversationDto;
+import com.zyz.dangxia.common.converstion.ConversationWithMsgListDto;
 import com.zyz.dangxia.model.ConversationDO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
 package com.zyz.dangxia.service;
 
-import com.zyz.dangxia.dto.ConversationDto;
-import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.common.converstion.ConversationDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
 
 import java.util.Date;
 import java.util.List;
@@ -12,7 +12,7 @@ public interface ConversationService {
      * @param userId 查询者id
      * @return
      */
-    List<ConversationDto> getConversation(int userId);
+    List<ConversationDto> listByUserId(int userId);
 
     /**
      * 发起对话

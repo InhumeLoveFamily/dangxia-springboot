@@ -1,13 +1,13 @@
 package com.zyz.dangxia.service.impl;
 
-import com.zyz.dangxia.dto.MessageDto;
+import com.zyz.dangxia.common.converstion.MessageDto;
 import com.zyz.dangxia.mapper.ConversationMapper;
 import com.zyz.dangxia.mapper.MessageMapper;
 import com.zyz.dangxia.mapper.TaskMapper;
 import com.zyz.dangxia.mapper.UserMapper;
 import com.zyz.dangxia.model.ConversationDO;
 import com.zyz.dangxia.model.MessageDO;
-import com.zyz.dangxia.mqtt.MqttManager;
+import com.zyz.dangxia.util.mqtt.MqttManager;
 import com.zyz.dangxia.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
