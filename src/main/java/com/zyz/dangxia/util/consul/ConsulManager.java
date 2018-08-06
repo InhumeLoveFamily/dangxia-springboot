@@ -31,13 +31,14 @@ public class ConsulManager {
 
     @PostConstruct
     public void init() {
-        log.info("开始自动注册");
-        register(serviceName,"4");
+        log.info("开始自动注册{}");
+        register(serviceName,"1");
         log.info("自动注册完成");
     }
 
     public void register(String serviceName, String serviceId) {
-        log.info("localhost = {}",localHost);
+        String tag = "1";
+        log.info("localhost = {},service = {},tag = {}",localHost,serviceName,tag);
         String http = String.format("http://%s:%d/health",localHost,port);
         AgentClient agentClient = consul.agentClient();
         //配置健康检查相关
@@ -45,7 +46,7 @@ public class ConsulManager {
                 .http(http)
                 .interval("5s").build();
         ImmutableRegistration registration = ImmutableRegistration.builder()
-                .id(serviceId).name(serviceName).addTags("dev").address(localHost).port(port).addChecks(check)
+                .id(serviceId).name(serviceName).addTags(tag).address(localHost).port(port).addChecks(check)
                 .build();
         agentClient.register(registration);
     }

@@ -1,6 +1,5 @@
 package com.zyz.dangxia.config;
 
-import com.google.common.net.HostAndPort;
 import com.orbitz.consul.Consul;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +20,6 @@ public class ConsulConfigBootstrapConfig {
     @Bean
     public Consul getConsul() {
         return Consul.builder()
-                /*.withHostAndPort(HostAndPort.fromParts("192.168.1.101",port))*/
                 .build();
     }
 
@@ -42,7 +40,7 @@ public class ConsulConfigBootstrapConfig {
                     if (ip != null && ip instanceof Inet4Address)
                     {
                         String host = ip.getHostAddress();
-                        System.out.println("本机的IP = " + host);
+//                        System.out.println("本机的IP = " + host);
                         if(!ip.getHostAddress().equals("172.0.0.1")) {
                             return host;
                         }
