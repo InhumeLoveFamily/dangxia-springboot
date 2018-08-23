@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dangxia" target="1.8" />
+      <module name="dangxia-springboot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
