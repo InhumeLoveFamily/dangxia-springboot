@@ -31,7 +31,7 @@ import static com.zyz.dangxia.base.DistanceUtil.km;
 @Service
 public class TaskServiceImpl implements TaskService {
 
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static Logger logger = LoggerFactory.getLogger(TaskServiceImpl.class);
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
@@ -45,6 +45,18 @@ public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private ConversationMapper conversationMapper;
+
+    @Autowired
+    private Raw2HandledDataUtil raw2HandledDataUtil;
+
+    @Autowired
+    private HandledDataList handledDataList;
+
+    @Autowired
+    private EvaluationCacheRepository evaluationCacheRepository;
+
+    @Autowired
+    private TaskClassList taskClassList;
 
 
     @Override
@@ -137,22 +149,10 @@ public class TaskServiceImpl implements TaskService {
         return 1;
     }
 
-    @Autowired
-    TaskClassList taskClassList;
-
     @Override
     public List<TaskClassDto> getClasses() {
         return translate1(taskClassList.getList());
     }
-
-    @Autowired
-    private Raw2HandledDataUtil raw2HandledDataUtil;
-
-    @Autowired
-    private HandledDataList handledDataList;
-
-    @Autowired
-    EvaluationCacheRepository evaluationCacheRepository;
 
     @Override
     public PriceSection getPriceSection(int classId, String taskContent, Date date) {
@@ -182,7 +182,7 @@ public class TaskServiceImpl implements TaskService {
         //按照距离进行排序
         Arrays.sort(sample, (o1, o2) -> (int) (o1[6] - o2[6]));
         //取出前K=6个,统计各价格类别出现次数
-        int[] counts = new int[8];
+        int[] counts = new int[PriceSectionUtil.getCount()];
         for (int i = 0; i < 6 && i < sample.length; i++) {
             logger.info("第{}个数据是属于{}类别的", i + 1, sample[i][5]);
             counts[(int) sample[i][5]]++;
@@ -190,7 +190,7 @@ public class TaskServiceImpl implements TaskService {
         //找到出现次数最多的类别
         int p = 0;
         int max = 0;
-        for (int i = 1; i < 8; i++) {
+        for (int i = 1; i < PriceSectionUtil.getCount(); i++) {
             if (counts[i] > max) {
                 max = counts[i];
                 p = i;
