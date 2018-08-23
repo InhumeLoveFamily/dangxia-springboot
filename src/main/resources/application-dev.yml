@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/dangxia?useSSL=false
 #    url: jdbc:mysql://140.143.225.154:3306/dangxia?useSSL=false&characterEncoding=utf8
     username: root
-    password: 123456789
+    password: Mysqlkxrjsw37
   redis:
 #    host: 172.0.0.1
     host: localhost

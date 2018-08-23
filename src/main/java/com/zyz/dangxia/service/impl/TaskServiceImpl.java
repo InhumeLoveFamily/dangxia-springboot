@@ -149,7 +149,7 @@ public class TaskServiceImpl implements TaskService {
     private Raw2HandledDataUtil raw2HandledDataUtil;
 
     @Autowired
-    HandledDataList handledDataList;
+    private HandledDataList handledDataList;
 
     @Autowired
     EvaluationCacheRepository evaluationCacheRepository;
