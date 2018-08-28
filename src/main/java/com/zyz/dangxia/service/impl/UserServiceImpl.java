@@ -49,12 +49,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto register(long phone, String password) {
-        boolean alreadExsist = true;
+        boolean alreadyExsists = true;
         //老用户，修改密码
         UserDO user = userMapper.getByPhone(phone);
         //新用户，初始化信息
         if (user == null) {
-            alreadExsist = false;
+            alreadyExsists = false;
             user = new UserDO();
             user.setPhone(phone);
             user.setRegisterDate(new Date());
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
             user.setIntegral(0D);
         }
         user.setPassword(password);
-        int result = alreadExsist ? userMapper.updateByPrimaryKey(user) : userMapper.insert(user);
+        int result = alreadyExsists ? userMapper.updateByPrimaryKey(user) : userMapper.insert(user);
         return translate(user);
     }
 

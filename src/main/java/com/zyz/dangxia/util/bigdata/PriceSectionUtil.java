@@ -49,4 +49,8 @@ public class PriceSectionUtil {
             return 9;
         } else return 2;
     }
+
+    public static int getCount() {
+        return 9;
+    }
 }
